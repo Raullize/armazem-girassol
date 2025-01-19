@@ -1,0 +1,47 @@
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
+
+.categorySection {
+  margin-bottom: 40px;
+  margin: 1rem 2rem 2rem 2rem;
+}
+
+.categoriesTitle {
+  font-size: 2.25rem;
+  margin-bottom: 1rem;
+  font-weight: 400;
+  margin-left: 22rem;
+}
+
+.linkCategories {
+  text-decoration: underline;
+  margin-left: 1.5rem;
+  font-size: 1.5rem;
+  color: #525252;
+  position: relative;
+  transition: color 1s ease;
+}
+
+.linkCategories::before {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -3px;
+  left: 0;
+  background-color: #333;
+  visibility: hidden;
+  transition: all 1s ease-in-out;
+}
+
+
+.linkCategories:hover {
+  transform: scale(1.15); /* Aumenta o tamanho do link mais perceptivelmente */
+  font-weight: bold; /* Destaca o link em negrito */
+}
+
+.slider {
+  padding: 20px 0;
+}
+
+

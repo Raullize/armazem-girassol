@@ -1,0 +1,26 @@
+.section {
+  display: flex;
+  flex-direction: column;
+  color: #ddd6cb;
+  font-size: 1.5rem;
+  max-width: 50rem;
+  width: 90%;
+  margin: 2rem auto;
+  text-align: center;
+}
+
+.categoriesHeader{
+  width: 100%;
+  padding: 5px 10%;
+  height: 100%;
+  background-color: white;
+}
+
+.categoriesList{
+  display: flex;
+  gap: 3rem;
+  font-size: 1.25rem;
+  justify-content: space-between;
+  align-items: center;
+  color: #05603c;
+}

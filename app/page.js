@@ -1,95 +1,38 @@
-import Image from "next/image";
 import styles from "./page.module.css";
+import Link from "next/link";
+import ImageSlideshow from "@/components/images/image-slideshow";
+import ListCategories from "@/components/listCategories/listCategories";
+import { getCategories } from "@/lib/categories";
+import ListProductsByCategory from "@/components/listProductsByCategory/listProductsByCategory";
+
+
+async function Categories() {
+  const categories = await getCategories(); // Busca os dados do banco
+  return <ListCategories categories={categories} />;
+}
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>app/page.js</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
+    <>
+      <Categories />
+      <header className={styles.header}>
+        <div className={styles.headerContent}>
+          <div className={styles.hero}>
+            <h1 className={styles.title}>Bem-estar natural para sua vida</h1>
+            <p>Escolha saúde com nossos produtos naturais.</p>
+          </div>
+          <button className={styles.cta}>
+            <Link href="/products">Conheça nossos produtos!</Link>
+          </button>
         </div>
+        <div className={styles.slideshow}>
+          <ImageSlideshow />
+        </div>
+
+      </header>
+      <main>
+        <ListProductsByCategory />
       </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+    </>
+  )
 }

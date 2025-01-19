@@ -1,0 +1,97 @@
+.product {
+  width: 90%;
+  height: 100%;
+  max-height: 60rem;
+  max-width: 300px;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.25rem 0.625rem rgba(0, 0, 0, 0.15);
+  background: #ffffff;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  margin: 1rem auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0.5rem 1.25rem rgba(0, 0, 0, 0.2);
+}
+
+.imageWrapper {
+  position: relative;
+  width: 80%;
+  margin: 1rem auto;
+  aspect-ratio: 1 / 1; /* Maintains a square ratio for the image */
+  overflow: hidden;
+}
+
+.image {
+  object-fit: cover; /* Ensures the image covers the entire container */
+}
+
+.details {
+  padding: 1rem;
+}
+
+.details h2 {
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 200;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.price {
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+
+.actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+
+.quantityInput {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 0.25rem;
+  text-align: center;
+}
+
+.buyButton {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  background-color: #57c575;
+  color: #fff;
+  border: none;
+  border-radius: 0.25rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.buyButton:hover {
+  background-color: #2a804e;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.buyButton:active {
+  background-color: #1a5030;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+
+.icon {
+  margin-right: 8px;
+  font-size: 1.2rem; /* Ajuste o tamanho conforme necessário */
+}
