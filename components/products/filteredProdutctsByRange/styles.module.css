@@ -12,7 +12,7 @@
   font-weight: bold;
   font-family: 'Montserrat', sans-serif;
   text-transform: uppercase;
-  background: linear-gradient(90deg, #151515, #6bfc3e);
+  background: linear-gradient(90deg, #1f4800, #6bfc3e);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -25,20 +25,15 @@
   -webkit-text-fill-color: transparent;
 }
 
-.header p {
-  margin: 0;
+.container{
+  display: flex;
+ 
 }
 
-.cta a {
-  display: inline-block;
-  margin-top: 1rem;
-  padding: 0.5rem 1rem;
-  border-radius: 0.5rem;
-  background: linear-gradient(90deg, #f9572a, #ff9b05);
-  color: #ffffff;
-  font-weight: bold;
-  text-decoration: none;
+.sidebar{
+  width: 20%;
 }
+
 
 .loading {
   font-weight: 700;

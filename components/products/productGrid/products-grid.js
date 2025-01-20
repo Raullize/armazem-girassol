@@ -1,4 +1,5 @@
-import ProductItem from './product-item'
+
+import ProductItem from '../productItem/product-item'
 import styles from './products-grid.module.css'
 export default function ProductsGrid({products}){
   return <ul className={styles.products}>

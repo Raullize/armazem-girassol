@@ -5,7 +5,8 @@ import dynamic from 'next/dynamic';
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 import styles from './carouselProducts.module.css';
-import ProductItem from "../products/product-item";
+import ProductItem from '../productItem/product-item';
+
 
 const Slider = dynamic(() => import('react-slick'), {
   ssr: false, 

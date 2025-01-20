@@ -3,7 +3,8 @@ import Link from "next/link";
 import ImageSlideshow from "@/components/images/image-slideshow";
 import ListCategories from "@/components/listCategories/listCategories";
 import { getCategories } from "@/lib/categories";
-import ListProductsByCategory from "@/components/listProductsByCategory/listProductsByCategory";
+import ListProductsByCategory from "@/components/products/listProductsByCategory/listProductsByCategory";
+
 
 
 async function Categories() {

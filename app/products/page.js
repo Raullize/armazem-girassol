@@ -1,28 +1,13 @@
-import ProductsGrid from '@/components/products/products-grid'
-import styles from './styles.module.css' 
-import { getProducts } from '@/lib/products'
-import { Suspense } from 'react';
+// app/products/page.js (executado no servidor)
+import { getProducts } from '@/lib/products';
+import { getCategories } from '@/lib/categories';
+import FilteredProducts from '@/components/products/filteredProdutctsByRange/filteredProducts';
 
-async function Products(){
+
+
+export default async function ProductsPage() {
   const products = await getProducts();
+  const categories = await getCategories();
 
-  return <ProductsGrid products={products}/>
+  return <FilteredProducts products={products} categories={categories} />;
 }
-export default function ProductsPage() {
-  
-
-  return <>
-    <header className={styles.header}>
-      <h1>Produtos deliciosos 
-        <span className={styles.highlight}> para você</span>
-      </h1>
-    </header>
-    <main className={styles.main}>
-      <Suspense fallback={<p className={styles.loading}>Fetching products</p>}>
-        <Products/>
-      </Suspense>
-        
-    </main>
-  </>
-}
-
