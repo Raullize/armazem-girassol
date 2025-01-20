@@ -1,17 +1,17 @@
 import Image from 'next/image';
 import { FiShoppingCart } from 'react-icons/fi'; // Ícone do carrinho de compras
 import styles from './product-item.module.css';
+import Link from 'next/link';
 
-export default function ProductItem({ nome, slug, image, preco }) {
+export default function ProductItem({ nome, id, image, preco }) {
+  const imageSrc = image || '/noImage.png';
+
   return (
     <article className={styles.product}>
       <div className={styles.imageWrapper}>
-        {/* Usar imagem padrão caso image esteja indefinida */}
-        {image ? (
-          <Image src={image} alt={nome} fill className={styles.image} />
-        ) : (
-          <div className={styles.placeholder}>Imagem não disponível</div>
-        )}
+
+          <Image src={imageSrc} alt={nome} fill className={styles.image} />
+
       </div>
       <div className={styles.details}>
         <h2>{nome}</h2>
@@ -23,9 +23,11 @@ export default function ProductItem({ nome, slug, image, preco }) {
             defaultValue="0"
             className={styles.quantityInput}
           />
-          <button className={styles.buyButton}>
-            <FiShoppingCart className={styles.icon} /> Adicionar
-          </button>
+          <Link  href={`/products/${id}`}>
+            <button className={styles.buyButton}>
+              <FiShoppingCart className={styles.icon} /> Adicionar
+            </button>
+          </Link>
         </div>
       </div>
     </article>

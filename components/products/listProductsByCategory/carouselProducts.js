@@ -65,7 +65,7 @@ export default function CarouselProducts({ products }) {
         <div key={product.id} className={styles.sliderItem}>
           <ProductItem
             nome={product.nome}
-            slug={`/products/${product.id}`}
+            id={`/${product.id}`}
             preco={product.preco}
             image={product.imagem}
           />

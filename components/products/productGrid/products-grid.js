@@ -4,7 +4,7 @@ import styles from './products-grid.module.css'
 export default function ProductsGrid({products}){
   return <ul className={styles.products}>
     {products.map(product => <li key={product.id}>
-      <ProductItem {...product}/>
+      <ProductItem id={`/products/${product.id}`} {...product}/>
     </li>)}
   </ul>
 }

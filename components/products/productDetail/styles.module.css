@@ -1,0 +1,129 @@
+.productContainer {
+  display: flex;
+  max-width: 80%;
+  margin: 2rem auto;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.imageSection {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.thumbnail img {
+  width: 60px;
+  border: 1px solid #ddd;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.mainImage {
+  width: 100%;
+  max-height: 400px;
+  object-fit: contain;
+}
+
+.productInfo {
+  width: 50%;
+  padding: 20px;
+}
+
+.badge {
+  background: #ffc107;
+  color: black;
+  padding: 5px 10px;
+  font-size: 12px;
+  border-radius: 3px;
+  font-weight: bold;
+}
+
+.productTitle {
+  font-size: 24px;
+  margin-top: 10px;
+}
+
+.productCategory {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.productPoints {
+  font-size: 14px;
+  color: #28a745;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.productPrice {
+  font-size: 26px;
+  font-weight: bold;
+  color: #005f5b;
+}
+
+.productDiscount {
+  font-size: 16px;
+  color: #444;
+  margin-bottom: 20px;
+}
+
+.purchaseSection {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.quantityInput {
+  width: 50px;
+  padding: 5px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+
+.buyButton {
+  background-color: #005f5b;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.buyButton:hover {
+  background-color: #004843;
+}
+
+.shippingSection {
+  margin-top: 20px;
+}
+
+.cepInputContainer {
+  display: flex;
+  gap: 10px;
+  margin-top: 5px;
+}
+
+.cepInput {
+  width: 120px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.calculateButton {
+  background: black;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  font-size: 14px;
+  cursor: pointer;
+}
