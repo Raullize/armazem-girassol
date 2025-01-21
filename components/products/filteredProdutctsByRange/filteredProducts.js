@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect, Suspense } from 'react';
+import { useSearchParams } from 'next/navigation'; // Import do hook correto
 import ListCategoriesSideBar from '@/components/listCategoriesSideBar/listCategoriesSideBar';
 import styles from './styles.module.css';
 import PriceRangeSlider from '@/components/priceRangeSlider/priceRangeSlider';
@@ -8,13 +9,22 @@ import ProductsGrid from '../productGrid/products-grid';
 
 export default function FilteredProducts({ products, categories }) {
   const [filteredProducts, setFilteredProducts] = useState(products);
+  const searchParams = useSearchParams(); // Hook para acessar parâmetros da URL
+  const search = searchParams.get('search') || ''; // Obtém o valor de "search" ou uma string vazia
 
   useEffect(() => {
-    setFilteredProducts(products); // Garante que os produtos são carregados corretamente
-  }, [products]);
+    // Filtra produtos com base no termo de busca
+    const lowerCaseSearch = search.toLowerCase();
+    const filtered = products.filter((p) =>
+      p.nome.toLowerCase().includes(lowerCaseSearch)
+    );
+    setFilteredProducts(filtered);
+  }, [products, search]);
 
   const handleFilterChange = (min, max) => {
-    setFilteredProducts(products.filter((p) => p.preco >= min && p.preco <= max));
+    setFilteredProducts((prevProducts) =>
+      prevProducts.filter((p) => p.preco >= min && p.preco <= max)
+    );
   };
 
   return (

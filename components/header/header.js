@@ -4,6 +4,7 @@ import styles from "./styles.module.css"
 import Image from "next/image";
 import NavLink from "../nav-link/nav-link";
 import { FiSearch } from "react-icons/fi"; 
+import InputHeader from "../inputHeader/inputHeader";
 
 export default function Header() {
   return <>
@@ -17,15 +18,7 @@ export default function Header() {
       Armazem Girassol
     </Link>
 
-    <div className={styles.searchContainer}>
-        <input
-          className={styles.searchInput}
-          placeholder="Pesquisar por..."
-        />
-        <button className={styles.searchButton}>
-          <FiSearch size={20} />
-        </button>
-      </div>
+    <InputHeader/>
 
     <nav className={styles.nav}>
       <ul>
