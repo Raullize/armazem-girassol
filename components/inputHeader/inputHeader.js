@@ -13,6 +13,7 @@ export default function InputHeader() {
     e.preventDefault();
     if (search.trim()) {
       router.push(`/products?search=${encodeURIComponent(search)}`); // Redireciona com a query string
+      setSearch(''); // Limpa o input de busca após a navegação
     }
   };
 

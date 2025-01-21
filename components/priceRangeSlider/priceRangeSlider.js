@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import ReactSlider from 'react-slider';
 import styles from './styles.module.css';
@@ -26,7 +25,7 @@ export default function PriceRangeSlider({ products, onFilterChange }) {
 
   return (
     <div style={{ padding: '20px' }}>
-      <h3>Faixa de preço</h3>
+      <h3 style={{ textAlign: 'center' }}>Faixa de preço</h3>
       <ReactSlider
         className={styles.horizontalSlider}
         thumbClassName={styles.thumb}
@@ -37,9 +36,9 @@ export default function PriceRangeSlider({ products, onFilterChange }) {
         onChange={handleRangeChange}
         minDistance={1}
       />
-      <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '10px' }}>
-        <span>R$ {selectedRange[0].toFixed(2)}</span>
-        <span>R$ {selectedRange[1].toFixed(2)}</span>
+      <div className={styles.priceLabels}>
+        <span className={`${styles.price} ${styles.priceMin}`}>R$ {selectedRange[0].toFixed(2)}</span>
+        <span className={`${styles.price} ${styles.priceMax}`}>R$ {selectedRange[1].toFixed(2)}</span>
       </div>
     </div>
   );
