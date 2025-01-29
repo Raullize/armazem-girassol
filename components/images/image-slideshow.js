@@ -3,17 +3,16 @@ import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import styles from './styles.module.css';
 
-import img1 from '@/assets/images/img1.jpg';
-import img2 from '@/assets/images/img2.jpg';
-import img3 from '@/assets/images/img3.jpg';
-import img4 from '@/assets/images/img4.jpg';
-import img5 from '@/assets/images/sunflowers.webp';
+import imgSunFlower from '@/assets/images/sunflowers.webp';
+import imgArmazem from '@/assets/images/armazem.webp';
+import imgBalcao from '@/assets/images/balcao.webp';
+import imgPrateleira from '@/assets/images/prateleira.webp';
 
 const images = [
-  { image: img5, alt: 'A delicious, juicy burger' },
-  { image: img2, alt: 'A delicious, spicy curry' },
-  { image: img3, alt: 'Steamed dumplings' },
-  { image: img4, alt: 'Mac and cheese' },
+  { image: imgArmazem, alt: 'A delicious, juicy burger' },
+  { image: imgBalcao, alt: 'A delicious, juicy burger' },
+  { image: imgPrateleira, alt: 'A delicious, spicy curry' },
+  { image: imgSunFlower, alt: 'Steamed dumplings' },
 ];
 
 export default function ImageSlideshow() {
