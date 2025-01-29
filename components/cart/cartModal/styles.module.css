@@ -1,0 +1,148 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: flex-end;
+  z-index: 9999;
+  animation: fadeIn 0.3s ease;
+}
+
+.cartContainer {
+  width: 400px;
+  background: #fff;
+  padding: 20px;
+  height: 100vh;
+  box-shadow: -4px 0 10px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  animation: slideIn 0.3s ease;
+  border-radius: 10px 0 0 10px;
+}
+
+@keyframes fadeIn {
+  from {
+    background: rgba(0, 0, 0, 0);
+  }
+  to {
+    background: rgba(0, 0, 0, 0.6);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.cartHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #ddd;
+}
+
+.closeButton {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #333;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.closeButton:hover {
+  transform: rotate(90deg);
+}
+
+.cartItems {
+  flex-grow: 1;
+  overflow-y: auto;
+  margin-top: 15px;
+  padding-right: 5px;
+}
+
+.cartItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+  background: #f9f9f9;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.itemInfo {
+  display: flex;
+  flex-direction: column;
+  font-size: 18px;
+  flex-grow: 1;
+}
+
+.removeButton {
+  background: none;
+  border: none;
+  color: red;
+  cursor: pointer;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+.removeButton:hover {
+  color: darkred;
+}
+
+.cartFooter {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 2px solid #ddd;
+}
+
+.clearButton, .checkoutButton {
+  flex: 1;
+  background: #2575fc;
+  color: white;
+  border: none;
+  padding: 12px;
+  cursor: pointer;
+  margin: 0 5px;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: background 0.3s ease;
+}
+
+.clearButton:hover {
+  background: #ff4d4d;
+}
+
+.checkoutButton:hover {
+  background: #0056b3;
+}
+
+.emptyMessage {
+  text-align: center;
+  color: #777;
+  margin-top: 20px;
+  font-size: 16px;
+}
+
+.totalPriceContainer {
+  background: #007828;
+  color: white;
+  padding: 15px;
+  text-align: center;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 2rem;
+}

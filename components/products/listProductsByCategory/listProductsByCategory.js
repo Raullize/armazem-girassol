@@ -1,23 +1,25 @@
 import styles from './styles.module.css';
 import Link from "next/link";
 import { getTopProductsByCategory } from "@/lib/topProductsFromCategory";
-import CarouselProducts from './carouselProducts'; // Importa o componente carrossel
+import CarouselProducts from './carouselProducts';
 
 export default async function ListProductsByCategory() {
-  const groupedProducts = await getTopProductsByCategory(); // Busca os produtos agrupados por categoria
+  const groupedProducts = await getTopProductsByCategory();
 
   return (
     <div>
       {Object.keys(groupedProducts).map((idCategoria) => {
         const categories = groupedProducts[idCategoria];
-
+        console.log(groupedProducts)
         return (
           <div key={idCategoria} className={styles.categorySection}>
             <h2 className={styles.categoriesTitle}>
               {categories.nomeCategoria}
-              <Link className={styles.linkCategories} href={`/categories/${idCategoria}`}>Ver todos</Link>
+              <Link className={styles.linkCategories} href={`/categories/${idCategoria}`}>
+                Ver todos
+              </Link>
             </h2>
-            <CarouselProducts products={categories.produtos} /> {/* Usa o carrossel */}
+            <CarouselProducts products={categories.produtos} /> 
           </div>
         );
       })}

@@ -7,9 +7,10 @@ import img1 from '@/assets/images/img1.jpg';
 import img2 from '@/assets/images/img2.jpg';
 import img3 from '@/assets/images/img3.jpg';
 import img4 from '@/assets/images/img4.jpg';
+import img5 from '@/assets/images/sunflowers.webp';
 
 const images = [
-  { image: img1, alt: 'A delicious, juicy burger' },
+  { image: img5, alt: 'A delicious, juicy burger' },
   { image: img2, alt: 'A delicious, spicy curry' },
   { image: img3, alt: 'Steamed dumplings' },
   { image: img4, alt: 'Mac and cheese' },
