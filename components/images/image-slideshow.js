@@ -9,10 +9,10 @@ import imgBalcao from '@/assets/images/balcao.webp';
 import imgPrateleira from '@/assets/images/prateleira.webp';
 
 const images = [
-  { image: imgArmazem, alt: 'A delicious, juicy burger' },
-  { image: imgBalcao, alt: 'A delicious, juicy burger' },
-  { image: imgPrateleira, alt: 'A delicious, spicy curry' },
-  { image: imgSunFlower, alt: 'Steamed dumplings' },
+  { image: imgArmazem, alt: 'Imagem do local armazemGirassol' },
+  { image: imgBalcao, alt: 'Foto do balcão do local' },
+  { image: imgPrateleira, alt: 'Foto da prateleira do armazemGirassol' },
+  { image: imgSunFlower, alt: 'Imagem de girassois' },
 ];
 
 export default function ImageSlideshow() {
