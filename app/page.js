@@ -18,8 +18,10 @@ export default function Home() {
   return (
     <>
 
-
-      <Categories />
+      <div className={styles.categories}>
+        <Categories />
+      </div>
+      
       <header className={styles.header}>
         <div className={styles.headerContent}>
           <div className={styles.hero}>

@@ -10,7 +10,7 @@
   font-size: 2.25rem;
   margin-bottom: 1rem;
   font-weight: 400;
-  margin-left: 22rem;
+  text-align: center;
 }
 
 .linkCategories {
@@ -43,5 +43,4 @@
 .slider {
   padding: 20px 0;
 }
-
 
