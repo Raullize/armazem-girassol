@@ -45,10 +45,13 @@ export default function Header() {
         />
       )}
       <header className={styles.header}>
-        <Link href='/' className={styles.logo}>
-          <Image src={logoImg} alt='Flor logo' priority />
-          Armazem Girassol
-        </Link>
+        <div className={styles.logo}>
+          <Link href='/'>
+            <Image src={logoImg} alt='Flor logo' priority />
+            <h2>Armazem Girassol</h2>
+          </Link>
+        </div>
+
 
         <InputHeader />
 

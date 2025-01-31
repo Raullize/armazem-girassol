@@ -41,6 +41,12 @@
   color: #aaa;
 }
 
+.searchInput:focus {
+  border-color: #f2c94c; /* Cor de destaque */
+  box-shadow: 0 0 8px rgba(242, 201, 76, 0.5);
+}
+
+
 @media (min-width: 768px) {
   .searchContainer{
     max-width: 400px;
@@ -48,7 +54,11 @@
   .searchInput {
     font-size: 1.25rem;
   }
-}.searchInput:focus {
-  border-color: #f2c94c; /* Cor de destaque */
-  box-shadow: 0 0 8px rgba(242, 201, 76, 0.5);
+}
+
+@media (max-width: 768px) {
+  .searchContainer{
+    margin: 1rem auto 0rem auto;
+    width: 90%;
+  }
 }
