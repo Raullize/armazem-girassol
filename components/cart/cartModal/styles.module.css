@@ -7,7 +7,7 @@
   background: rgba(0, 0, 0, 0.6);
   display: flex;
   justify-content: flex-end;
-  z-index: 2;
+  z-index: 2000;
   animation: fadeIn 0.3s ease;
 }
 

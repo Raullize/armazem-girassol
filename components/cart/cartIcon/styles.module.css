@@ -2,36 +2,39 @@
   position: fixed;
   bottom: 20px;
   right: 20px;
-  width: 7rem;
-  height: 7rem;
+  width: 80px;
+  height: 80px;
   border: none;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-size: cover;
   background-color: transparent;
-  background-position: center;
   cursor: pointer;
-  transition: transform 0.3s ease, background 0.3s ease;
-  z-index: 2;
+  transition: transform 0.3s ease;
+  z-index: 1500;
+  padding: 0;
+  border-radius: 50%;
 }
 
 .floatingCart:hover {
-  background: linear-gradient(circle, #e1bf00d5, #FFA500);
-  transform: scale(1.15) rotate(10deg);
+  transform: scale(1.15);
 }
 
 .floatingCart:active {
-  background: linear-gradient(circle, #FFA500, #FF8C00);
-  transform: scale(0.9) rotate(-10deg);
+  transform: scale(0.9);
 }
-@keyframes spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+.iconCart {
+  color: white;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 40%;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
 }
 
 .badge {
@@ -47,15 +50,4 @@
   font-weight: bold;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
   z-index: 1001;
-}
-.iconCart {
-  color: white;
-  background: rgba(0, 0, 0, 0.7);
-  border-radius: 40%;
-  width: 3.2rem;
-  padding: 0.7rem;
-  height: 3.2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
