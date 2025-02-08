@@ -48,6 +48,8 @@ export default function Header() {
         <div className={styles.logo}>
           <Link href='/'>
             <Image src={logoImg} alt='Flor logo' priority />
+          </Link>
+          <Link href='/' className={styles.title}>
             <h2>Armazem Girassol</h2>
           </Link>
         </div>
