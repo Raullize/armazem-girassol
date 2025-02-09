@@ -1,64 +1,97 @@
 .searchContainer {
   display: flex;
   align-items: center;
-  border: 2px solid #ddd6cb;
-  border-radius: 0.5rem;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 100px;
   overflow: hidden;
   width: 100%;
+  max-width: 500px;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(8px);
+}
+
+.searchContainer:focus-within {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-1px);
 }
 
 .searchInput {
   flex: 1;
-  padding: 0.8rem 1rem;
+  padding: 0.9rem 1.5rem;
   font-size: 1rem;
-  color: #333;
+  color: #ffffff;
+  background: transparent;
   border: none;
   outline: none;
   width: 100%;
+  font-weight: 400;
+  letter-spacing: 0.01em;
 }
 
 .searchInput::placeholder {
-  color: #aaa;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 400;
 }
 
 .searchButton {
-  background-color: #05603c;
-  color: #fff;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.8);
   border: none;
-  padding: 0.8rem;
+  padding: 0.9rem 1.2rem;
+  margin-right: 0.3rem;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: all 0.3s ease;
+  border-radius: 50%;
 }
 
 .searchButton:hover {
-  background-color: var(--forest-green);
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.1);
+  transform: scale(1.1);
 }
 
-.searchInput::placeholder {
-  color: #aaa;
+.searchButton svg {
+  stroke-width: 2.5;
+  transition: transform 0.3s ease;
 }
 
-.searchInput:focus {
-  border-color: #f2c94c; /* Cor de destaque */
-  box-shadow: 0 0 8px rgba(242, 201, 76, 0.5);
+.searchButton:hover svg {
+  transform: scale(1.1);
 }
 
+/* Estilização do autofill */
+.searchInput:-webkit-autofill,
+.searchInput:-webkit-autofill:hover,
+.searchInput:-webkit-autofill:focus {
+  -webkit-text-fill-color: #ffffff;
+  -webkit-box-shadow: 0 0 0px 1000px transparent inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
 
 @media (min-width: 768px) {
-  .searchContainer{
-    max-width: 400px;
-  }
-  .searchInput {
-    font-size: 1.25rem;
+  .searchContainer {
+    margin: 0 2rem;
   }
 }
 
 @media (max-width: 768px) {
-  .searchContainer{
-    margin: 1rem auto 0rem auto;
-    width: 90%;
+  .searchContainer {
+    margin: 0.5rem;
+    max-width: 90%;
+  }
+
+  .searchInput {
+    padding: 0.8rem 1.2rem;
+    font-size: 0.95rem;
+  }
+
+  .searchButton {
+    padding: 0.8rem 1rem;
   }
 }
