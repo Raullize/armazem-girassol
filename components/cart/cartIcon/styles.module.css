@@ -2,8 +2,8 @@
   position: fixed;
   bottom: 20px;
   right: 20px;
-  width: 80px;
-  height: 80px;
+  width: 90px;
+  height: 90px;
   border: none;
   display: flex;
   align-items: center;
@@ -28,9 +28,9 @@
   color: white;
   background: rgba(0, 0, 0, 0.7);
   border-radius: 40%;
-  width: 2.5rem;
-  height: 2.5rem;
-  padding: 0.5rem;
+  width: 3rem;
+  height: 3rem;
+  padding: 0.6rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -46,7 +46,7 @@
   color: white;
   border-radius: 50%;
   padding: 6px 10px;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: bold;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
   z-index: 1001;
