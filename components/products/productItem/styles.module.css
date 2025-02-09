@@ -1,62 +1,98 @@
 .product {
   width: 90%;
   height: 100%;
-  min-height: 450px;
-  max-height: 450px;
-  max-width: 300px;
-  border-radius: 1rem;
+  min-height: 500px;
+  max-height: 500px;
+  max-width: 350px;
+  border-radius: 1.5rem;
   background: #ffffff;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   margin: 1rem auto;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   border: 1px solid rgba(0, 0, 0, 0.05);
   box-shadow: 
-    0 4px 6px -1px rgba(0, 0, 0, 0.1),
-    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    0 15px 30px -10px rgba(0, 0, 0, 0.08),
+    0 10px 20px -10px rgba(0, 0, 0, 0.05);
+  transform-style: preserve-3d;
+  transform: translateZ(0);
+  position: relative;
+}
+
+.product::before {
+  display: none;
 }
 
 .product:hover {
-  transform: translateY(-8px);
+  transform: translateY(-12px) rotateX(2deg);
   box-shadow: 
-    0 20px 25px -5px rgba(0, 0, 0, 0.1),
-    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    0 25px 40px -15px rgba(0, 0, 0, 0.1),
+    0 15px 25px -15px rgba(0, 0, 0, 0.08);
 }
 
 .imageWrapper {
   position: relative;
-  width: 88%;
-  margin: 1.25rem auto 0;
+  width: 90%;
+  margin: 1.5rem auto 0;
   aspect-ratio: 4 / 5;
   overflow: hidden;
-  border-radius: 0.75rem;
+  border-radius: 1rem;
   background: #f8f8f8;
-  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.05);
+  box-shadow: 
+    0 10px 20px -10px rgba(0, 0, 0, 0.05),
+    inset 0 0 15px rgba(0, 0, 0, 0.03);
+  transition: transform 0.4s ease;
+}
+
+.product:hover .imageWrapper {
+  transform: scale(0.98);
 }
 
 .image {
   object-fit: cover;
-  transition: transform 0.3s ease;
+  transition: transform 0.4s ease;
 }
 
 .product:hover .image {
-  transform: scale(1.05);
+  transform: scale(1.08);
 }
 
 .details {
-  padding: 1.5rem;
+  padding: 1.75rem;
   display: flex;
   flex-direction: column;
   flex: 1;
-  gap: 1.25rem;
-  background: linear-gradient(180deg, transparent, rgba(248, 248, 248, 0.5) 15%);
+  gap: 1.5rem;
+  background: linear-gradient(
+    180deg, 
+    transparent, 
+    rgba(248, 248, 248, 0.3) 15%
+  );
+  position: relative;
+  z-index: 2;
+}
+
+.details::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background: linear-gradient(
+    180deg, 
+    transparent, 
+    rgba(87, 197, 117, 0.05)
+  );
+  opacity: 0.7;
+  z-index: -1;
 }
 
 .details h2 {
   text-align: center;
-  font-size: 1.1rem;
-  font-weight: 500;
+  font-size: 1.2rem;
+  font-weight: 600;
   color: #2d3748;
   margin: 0;
   height: 2.4em;
@@ -64,17 +100,23 @@
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.02em;
   line-height: 1.2;
+  transition: color 0.3s ease;
+}
+
+.product:hover .details h2 {
+  color: #05603c;
 }
 
 .price {
-  font-size: 1.75rem;
-  font-weight: 600;
+  font-size: 2rem;
+  font-weight: 700;
   margin: 0;
   text-align: center;
   color: #05603c;
   font-family: 'Inter', system-ui, sans-serif;
+  letter-spacing: -0.03em;
 }
 
 .actions {
@@ -83,37 +125,34 @@
   justify-content: space-between;
   align-items: center;
   margin-top: auto;
-  padding-top: 1rem;
-  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  position: relative;
 }
 
 .quantityWrapper {
   position: relative;
-  width: 100%;
+  width: 50%;
 }
 
 .quantityInput {
   width: 100%;
   padding: 0.75rem 1.5rem;
   font-size: 1rem;
-  border: 2px solid #e2e8f0;
-  border-radius: 0.5rem;
+  border: 2px solid rgba(5, 96, 60, 0.2);
+  border-radius: 0.75rem;
   text-align: center;
-  transition: all 0.2s ease;
+  transition: all 0.3s ease;
   background: #f8fafc;
   -moz-appearance: textfield;
+  color: #05603c;
+  font-weight: 600;
 }
 
 .quantityInput::-webkit-outer-spin-button,
 .quantityInput::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
-}
-
-.quantityInput:focus {
-  outline: none;
-  border-color: #05603c;
-  box-shadow: 0 0 0 3px rgba(5, 96, 60, 0.1);
 }
 
 .quantityButton {
@@ -123,87 +162,86 @@
   background: none;
   border: none;
   color: #05603c;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   cursor: pointer;
   padding: 0.25rem 0.5rem;
-  transition: all 0.2s ease;
+  transition: all 0.3s ease;
   display: flex;
   align-items: center;
   justify-content: center;
+  opacity: 0.7;
+  z-index: 2;
+}
+
+.decrementButton {
+  left: 0.5rem;
+}
+
+.incrementButton {
+  right: 0.5rem;
 }
 
 .quantityButton:hover {
   color: #044d31;
-}
-
-.decrementButton {
-  left: 0.25rem;
-}
-
-.incrementButton {
-  right: 0.25rem;
+  opacity: 1;
 }
 
 .buyButton {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  padding: 0.75rem;
+  width: 50%;
+  padding: 0.9rem;
   background-color: #05603c;
   color: #fff;
   border: none;
-  border-radius: 0.5rem;
+  border-radius: 0.75rem;
   font-size: 1.1rem;
-  font-weight: 500;
+  font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.2s ease;
+  transition: all 0.3s ease;
   text-transform: uppercase;
-  letter-spacing: 0.025em;
+  letter-spacing: 0.05em;
+  box-shadow: 0 10px 20px -10px rgba(5, 96, 60, 0.3);
 }
 
 .buyButton:hover {
   background-color: #044d31;
+  transform: translateY(-3px);
+  box-shadow: 0 15px 25px -12px rgba(5, 96, 60, 0.4);
 }
 
 .buyButton:active {
+  transform: translateY(0);
   background-color: #033d27;
+  box-shadow: 0 5px 10px -5px rgba(5, 96, 60, 0.2);
 }
 
 .icon {
   margin-right: 0.5rem;
-  font-size: 1.2rem;
-  transition: transform 0.2s ease;
+  font-size: 1.3rem;
+  transition: transform 0.3s ease;
 }
 
 .buyButton:hover .icon {
-  transform: translateX(-2px);
+  transform: translateX(-3px) rotate(15deg);
 }
 
 @media (max-width: 768px) {
   .product {
     margin: 1rem auto;
-    min-height: 400px;
-    max-height: 400px;
+    min-height: 450px;
+    max-height: 450px;
   }
   
   .imageWrapper {
     width: 85%;
-    margin: 1rem auto 0;
+    margin: 1.25rem auto 0;
     aspect-ratio: 1 / 1;
   }
   
   .details {
-    padding: 1.25rem;
-    gap: 1rem;
-  }
-  
-  .price {
-    font-size: 1.5rem;
-  }
-  
-  .buyButton {
-    font-size: 1rem;
-    padding: 0.6rem;
+    padding: 1.5rem;
+    gap: 1.25rem;
   }
 }
