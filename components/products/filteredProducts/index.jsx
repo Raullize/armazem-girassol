@@ -54,7 +54,10 @@ export default function FilteredProducts({ products, categories }) {
 
       <section className={styles.productsSection}>
         <Suspense fallback={<p className={styles.loading}>Carregando produtos...</p>}>
-          <ProductsGrid products={filteredProducts} />
+          <ProductsGrid 
+            products={filteredProducts} 
+            searchTerm={search} 
+          />
         </Suspense>
       </section>
     </main>

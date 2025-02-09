@@ -38,3 +38,35 @@
     grid-gap: 1rem;
   }
 }
+
+.gridContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.searchInfo {
+  width: 100%;
+  text-align: center;
+  padding: 1rem;
+  background-color: rgba(5, 96, 60, 0.05);
+  color: #05603c;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  border-radius: 0.5rem;
+}
+
+.emptyState {
+  width: 100%;
+  text-align: center;
+  padding: 2rem;
+  background-color: rgba(5, 96, 60, 0.05);
+  border-radius: 0.5rem;
+  color: #05603c;
+}
+
+.emptyState p {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+}
