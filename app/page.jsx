@@ -16,7 +16,6 @@ export default function Home() {
 
   return (
     <>
-
       <div className={styles.categories}>
         <Categories />
       </div>
@@ -25,7 +24,7 @@ export default function Home() {
         <div className={styles.headerContent}>
           <div className={styles.hero}>
             <h1 className={styles.title}>Bem-estar natural<br></br> para sua vida</h1>
-            <p>Escolha saúde com nossos produtos naturais.</p>
+            <p>Escolha saúde com nossos produtos naturais.</p>''
           </div>
           <button className={styles.cta}>
             <Link href="/products">Conheça nossos produtos!</Link>
@@ -34,7 +33,6 @@ export default function Home() {
         <div className={styles.slideshow}>
           <ImageSlideshow />
         </div>
-
       </header>
       <main>
         <ListProductsByCategory />
