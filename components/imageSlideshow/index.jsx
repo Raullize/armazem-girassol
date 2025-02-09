@@ -4,10 +4,10 @@ import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import styles from './styles.module.css';
 
-import imgSunFlower from '@/assets/images/sunflowers.webp';
-import imgArmazem from '@/assets/images/armazem.webp';
-import imgBalcao from '@/assets/images/balcao.webp';
-import imgPrateleira from '@/assets/images/prateleira.webp';
+import imgSunFlower from '@/public/assets/images/sunflowers.webp';
+import imgArmazem from '@/public/assets/images/armazem.webp';
+import imgBalcao from '@/public/assets/images/balcao.webp';
+import imgPrateleira from '@/public/assets/images/prateleira.webp';
 
 const images = [
   { image: imgArmazem, alt: 'Imagem do local armazemGirassol' },
