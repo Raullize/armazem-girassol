@@ -191,40 +191,30 @@
   justify-content: center;
   align-items: center;
   width: 50%;
-  padding: 0.9rem;
+  padding: 0.75rem;
   background-color: #05603c;
   color: #fff;
   border: none;
   border-radius: 0.75rem;
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.3s ease;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  box-shadow: 0 10px 20px -10px rgba(5, 96, 60, 0.3);
-}
-
-.buyButton:hover {
-  background-color: #044d31;
-  transform: translateY(-3px);
-  box-shadow: 0 15px 25px -12px rgba(5, 96, 60, 0.4);
-}
-
-.buyButton:active {
-  transform: translateY(0);
-  background-color: #033d27;
-  box-shadow: 0 5px 10px -5px rgba(5, 96, 60, 0.2);
+  transition: background-color 0.3s ease;
 }
 
 .icon {
   margin-right: 0.5rem;
   font-size: 1.3rem;
+  color: #ffffff;
   transition: transform 0.3s ease;
 }
 
+.buyButton:hover {
+  background-color: #044d31;
+}
+
 .buyButton:hover .icon {
-  transform: translateX(-3px) rotate(15deg);
+  transform: rotate(5deg) translateY(2px);
 }
 
 @media (max-width: 768px) {

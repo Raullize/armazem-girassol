@@ -8,6 +8,7 @@ import { useCart } from '@/context/CartContext';
 import { useState } from 'react';
 
 export default function ProductItem({ nome, id, image, preco, unidade_medida }) {
+  console.log('ProductItem Props:', { nome, id, image, preco, unidade_medida });
   const imageSrc = image || '/noImage.png';
   const { addToCart } = useCart();
   const [quantity, setQuantity] = useState(
