@@ -30,7 +30,9 @@ export default function ProductItem({ nome, id, image, preco, unidade_medida }) 
     setQuantity(prev => Math.max(minValue, prev - step));
   };
 
-  const pricePer100g = unidade_medida === 'KG' ? (preco / 10).toFixed(2) : preco.toFixed(2);
+  const pricePer100g = unidade_medida === 'KG' 
+    ? (preco / 10).toFixed(2) 
+    : preco.toFixed(2);
   const totalPrice = unidade_medida === 'KG'
     ? ((preco / 1000) * quantity).toFixed(2)
     : (preco * quantity).toFixed(2);
@@ -82,7 +84,14 @@ export default function ProductItem({ nome, id, image, preco, unidade_medida }) 
 
           <button
             className={styles.buyButton}
-            onClick={() => addToCart({ id, nome, preco, quantity, image, unidade_medida })}
+            onClick={() => addToCart({ 
+              id, 
+              name: nome, 
+              price: preco, 
+              quantity, 
+              image, 
+              unit: unidade_medida 
+            })}
           >
             <FiShoppingCart className={styles.icon} />
             Comprar

@@ -6,7 +6,7 @@ export default function CartModal({ cart, removeFromCart, clearCart, calculateTo
   const getTotalPrice = () => {
     return cart.reduce((total, item) => {
       const itemTotal =
-        item.unit === 'g'
+        item.unit === 'KG'
           ? (item.price / 1000) * item.quantity
           : item.price * item.quantity;
       return total + itemTotal;
@@ -33,9 +33,11 @@ export default function CartModal({ cart, removeFromCart, clearCart, calculateTo
             <p className={styles.emptyMessage}>Seu carrinho está vazio.</p>
           ) : (
             cart.map((item) => {
-              const unitLabel = item.unit === 'g' ? '100g' : 'UN';
-              const pricePerUnit = item.unit === 'g' ? (item.price / 10).toFixed(2) : item.price.toFixed(2);
-              const totalPrice = item.unit === 'g'
+              const unitLabel = item.unit === 'KG' ? '100g' : 'UN';
+              const pricePerUnit = item.unit === 'KG' 
+                ? (item.price / 10).toFixed(2) 
+                : item.price.toFixed(2);
+              const totalPrice = item.unit === 'KG'
                 ? ((item.price / 1000) * item.quantity).toFixed(2)
                 : (item.price * item.quantity).toFixed(2);
 
