@@ -9,45 +9,123 @@ import { useCart } from '@/context/CartContext';
 export default function ProductDetail({ product }) {
   const imageSrc = product.imagem || '/noImage.png';
   const { addToCart } = useCart();
-  const [quantity, setQuantity] = useState(1);
+  const [quantity, setQuantity] = useState(
+    product.unidadeMedida === 'KG' ? 100 : 1
+  );
+
+  const handleQuantityChange = (e) => {
+    const value = product.unidadeMedida === 'KG' 
+      ? Math.max(50, Math.ceil(Number(e.target.value) / 10) * 10)
+      : Math.max(1, Number(e.target.value));
+    setQuantity(value);
+  };
+
+  const handleIncrement = () => {
+    const step = product.unidadeMedida === 'KG' ? 50 : 1;
+    setQuantity(prev => prev + step);
+  };
+
+  const handleDecrement = () => {
+    const step = product.unidadeMedida === 'KG' ? 50 : 1;
+    const minValue = product.unidadeMedida === 'KG' ? 50 : 1;
+    setQuantity(prev => Math.max(minValue, prev - step));
+  };
+
+  const totalPrice = product.unidadeMedida === 'KG'
+    ? ((product.preco / 1000) * quantity).toFixed(2)
+    : (product.preco * quantity).toFixed(2);
+
+  const unitLabel = product.unidadeMedida === 'KG' ? `${quantity}g` : `${quantity} UN`;
+
+  // Verificar se o produto está disponível
+  const isAvailable = product.quantidade > 0;
 
   return (
     <div className={styles.productContainer}>
-      {/* Imagem e Miniatura */}
-      <div className={styles.imageSection}>
-        <Image src={imageSrc} alt={product.nome} className={styles.mainImage} width={550} height={550} />
-      </div>
-      <div className={styles.productInfo}>
-        <span className={styles.badge}>Disponível!</span>
-        <h1 className={styles.productTitle}>{product.nome}</h1>
-        <hr></hr>
-        <p className={styles.productDescription}>
-          <strong>Descrição:</strong> {product.descricao}
-        </p>
-        <p className={styles.productPrice}>R$ {product.preco.toFixed(2)}</p>
+      <div className={styles.productWrapper}>
+        <div className={styles.imageSection}>
+          <div className={styles.imageBorder}>
+            <Image 
+              src={imageSrc} 
+              alt={product.nome} 
+              fill 
+              className={styles.mainImage} 
+              priority 
+            />
+          </div>
+        </div>
+        
+        <div className={styles.productInfo}>
+          <div className={styles.productHeader}>
+            <span className={`${styles.badge} ${!isAvailable ? styles.unavailable : ''}`}>
+              {isAvailable ? 'Disponível' : 'Indisponível'}
+            </span>
+            <h1 className={styles.productTitle}>{product.nome}</h1>
+          </div>
 
-        <div className={styles.purchaseSection}>
-          <input
-            type="number"
-            min="1"
-            value={quantity}
-            onChange={(e) => setQuantity(Number(e.target.value))}
-            className={styles.quantityInput}
-          />
-          <button
-            onClick={(e) => {
-              e.stopPropagation();
-              addToCart({
-                id: product.id,
-                name: product.nome,
-                price: product.preco,
-                quantity: quantity,
-              });
-            }}
-            className={styles.buyButton}
-          >
-            <FiShoppingCart className={styles.icon} /> Adicionar
-          </button>
+          <div className={styles.productDetails}>
+            <p className={styles.productDescription}>
+              {product.descricao}
+            </p>
+
+            <div className={styles.priceSection}>
+              <span className={styles.productPrice}>
+                R$ {product.preco.toFixed(2)}
+                <span className={styles.unitLabel}>/{product.unidadeMedida === 'KG' ? '100g' : 'UN'}</span>
+              </span>
+            </div>
+
+            {isAvailable ? (
+              <div className={styles.purchaseSection}>
+                <div className={styles.quantityControl}>
+                  <button 
+                    onClick={handleDecrement} 
+                    className={styles.quantityButton}
+                  >
+                    -
+                  </button>
+                  <input
+                    type="number"
+                    min={product.unidadeMedida === 'KG' ? "50" : "1"}
+                    step={product.unidadeMedida === 'KG' ? "50" : "1"}
+                    value={quantity}
+                    onChange={handleQuantityChange}
+                    className={styles.quantityInput}
+                  />
+                  <button 
+                    onClick={handleIncrement} 
+                    className={styles.quantityButton}
+                  >
+                    +
+                  </button>
+                </div>
+
+                <div className={styles.totalPriceSection}>
+                  <span className={styles.totalPriceLabel}>Total:</span>
+                  <span className={styles.totalPrice}>R$ {totalPrice}</span>
+                  <span className={styles.totalUnitLabel}>({unitLabel})</span>
+                </div>
+
+                <button
+                  onClick={() => addToCart({
+                    id: product.id,
+                    name: product.nome,
+                    price: product.preco,
+                    quantity: quantity,
+                    unit: product.unidadeMedida
+                  })}
+                  className={styles.buyButton}
+                >
+                  <FiShoppingCart className={styles.icon} /> 
+                  Adicionar ao Carrinho
+                </button>
+              </div>
+            ) : (
+              <div className={styles.unavailableMessage}>
+                Produto temporariamente indisponível
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </div>
