@@ -1,51 +1,80 @@
 .product {
   width: 90%;
   height: 100%;
-  max-height: 60rem;
+  min-height: 450px;
+  max-height: 450px;
   max-width: 300px;
-  border-radius: 0.5rem;
-  box-shadow: 0 0.25rem 0.625rem rgba(0, 0, 0, 0.15);
+  border-radius: 1rem;
   background: #ffffff;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   margin: 1rem auto;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 
+    0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
 .product:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0.5rem 1.25rem rgba(0, 0, 0, 0.2);
+  transform: translateY(-8px);
+  box-shadow: 
+    0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 
 .imageWrapper {
   position: relative;
-  width: 80%;
-  margin: 1rem auto;
-  aspect-ratio: 1 / 1; /* Maintains a square ratio for the image */
+  width: 85%;
+  margin: 1.25rem auto 0;
+  aspect-ratio: 1 / 1;
   overflow: hidden;
+  border-radius: 0.75rem;
+  background: #f8f8f8;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.05);
 }
 
 .image {
-  object-fit: cover; /* Ensures the image covers the entire container */
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.product:hover .image {
+  transform: scale(1.05);
 }
 
 .details {
-  padding: 1rem;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 1.25rem;
+  background: linear-gradient(180deg, transparent, rgba(248, 248, 248, 0.5) 15%);
 }
 
 .details h2 {
   text-align: center;
-  font-size: 1rem;
-  font-weight: 200;
-  color: #333;
-  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #2d3748;
+  margin: 0;
+  height: 2.4em;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
 }
 
 .price {
-  font-size: 1.5rem;
-  font-weight: 400;
-  margin-bottom: 1rem;
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin: 0;
+  text-align: center;
+  color: #05603c;
+  font-family: 'Inter', system-ui, sans-serif;
 }
 
 .actions {
@@ -53,52 +82,125 @@
   gap: 1rem;
   justify-content: space-between;
   align-items: center;
-  margin-top: 0.5rem;
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.quantityWrapper {
+  position: relative;
+  width: 100%;
 }
 
 .quantityInput {
   width: 100%;
-  padding: 0.5rem 1rem;
+  padding: 0.75rem 1.5rem;
   font-size: 1rem;
-  border: 1px solid #ddd;
-  border-radius: 0.25rem;
+  border: 2px solid #e2e8f0;
+  border-radius: 0.5rem;
   text-align: center;
+  transition: all 0.2s ease;
+  background: #f8fafc;
+  -moz-appearance: textfield;
+}
+
+.quantityInput::-webkit-outer-spin-button,
+.quantityInput::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.quantityInput:focus {
+  outline: none;
+  border-color: #05603c;
+  box-shadow: 0 0 0 3px rgba(5, 96, 60, 0.1);
+}
+
+.quantityButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #05603c;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.quantityButton:hover {
+  color: #044d31;
+}
+
+.decrementButton {
+  left: 0.25rem;
+}
+
+.incrementButton {
+  right: 0.25rem;
 }
 
 .buyButton {
   display: flex;
   justify-content: center;
+  align-items: center;
   width: 100%;
-  padding: 0.5rem 1rem;
-  background-color: #57c575;
+  padding: 0.75rem;
+  background-color: #05603c;
   color: #fff;
   border: none;
-  border-radius: 0.25rem;
-  font-size: 1.2rem;
-  font-weight: bold;
+  border-radius: 0.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
 }
 
 .buyButton:hover {
-  background-color: #2a804e;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  background-color: #044d31;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(5, 96, 60, 0.15);
 }
 
 .buyButton:active {
-  background-color: #1a5030;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  background-color: #033d27;
+  transform: translateY(0);
 }
-
 
 .icon {
-  margin-right: 8px;
-  font-size: 1.2rem; /* Ajuste o tamanho conforme necessário */
+  margin-right: 0.5rem;
+  font-size: 1.2rem;
+  transition: transform 0.2s ease;
 }
 
+.buyButton:hover .icon {
+  transform: translateX(-2px);
+}
 
-@media (max-width : 768px) {
+@media (max-width: 768px) {
   .product {
     margin: 1rem auto;
+    min-height: 400px;
+    max-height: 400px;
+  }
+  
+  .details {
+    padding: 1.25rem;
+    gap: 1rem;
+  }
+  
+  .price {
+    font-size: 1.5rem;
+  }
+  
+  .buyButton {
+    font-size: 1rem;
+    padding: 0.6rem;
   }
 }

@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { FiShoppingCart } from 'react-icons/fi';
+import { FiShoppingCart, FiMinus, FiPlus } from 'react-icons/fi';
 import styles from './styles.module.css';
 import Link from 'next/link';
 import { useCart } from '@/context/CartContext';
@@ -17,6 +17,17 @@ export default function ProductItem({ nome, id, image, preco, unidade_medida }) 
   const handleQuantityChange = (e) => {
     const value = Math.max(50, Math.ceil(Number(e.target.value) / 10) * 10); 
     setQuantity(value);
+  };
+
+  const handleIncrement = () => {
+    const step = unidade_medida === 'KG' ? 50 : 1;
+    setQuantity(prev => prev + step);
+  };
+
+  const handleDecrement = () => {
+    const step = unidade_medida === 'KG' ? 50 : 1;
+    const minValue = unidade_medida === 'KG' ? 50 : 1;
+    setQuantity(prev => Math.max(minValue, prev - step));
   };
 
   const pricePer100g = unidade_medida === 'KG' ? (preco / 10).toFixed(2) : preco.toFixed(2);
@@ -42,28 +53,39 @@ export default function ProductItem({ nome, id, image, preco, unidade_medida }) 
         </p>
 
         <div className={styles.actions}>
-          <input
-            type="number"
-            min="50"
-            step={10}
-            value={quantity}
-            onChange={handleQuantityChange}
-            className={styles.quantityInput}
-          />
+          <div className={styles.quantityWrapper}>
+            <button 
+              type="button" 
+              onClick={handleDecrement}
+              className={`${styles.quantityButton} ${styles.decrementButton}`}
+              aria-label="Diminuir quantidade"
+            >
+              <FiMinus />
+            </button>
+            <input
+              type="number"
+              min={unidade_medida === 'KG' ? "50" : "1"}
+              step={unidade_medida === 'KG' ? "50" : "1"}
+              value={quantity}
+              onChange={handleQuantityChange}
+              className={styles.quantityInput}
+            />
+            <button 
+              type="button" 
+              onClick={handleIncrement}
+              className={`${styles.quantityButton} ${styles.incrementButton}`}
+              aria-label="Aumentar quantidade"
+            >
+              <FiPlus />
+            </button>
+          </div>
+
           <button
-            onClick={(e) => {
-              e.stopPropagation();
-              addToCart({
-                id,
-                name: nome,
-                price: preco,
-                quantity,
-                unit: unidade_medida === 'KG' ? 'g' : 'UN',
-              });
-            }}
             className={styles.buyButton}
+            onClick={() => addToCart({ id, nome, preco, quantity, image, unidade_medida })}
           >
-            <FiShoppingCart className={styles.icon} /> Adicionar
+            <FiShoppingCart className={styles.icon} />
+            Comprar
           </button>
         </div>
       </div>
