@@ -26,7 +26,7 @@
 
 .imageWrapper {
   position: relative;
-  width: 85%;
+  width: 88%;
   margin: 1.25rem auto 0;
   aspect-ratio: 1 / 1;
   overflow: hidden;
@@ -155,22 +155,19 @@
   border: none;
   border-radius: 0.5rem;
   font-size: 1.1rem;
-  font-weight: 600;
+  font-weight: 500;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: background-color 0.2s ease;
   text-transform: uppercase;
   letter-spacing: 0.025em;
 }
 
 .buyButton:hover {
   background-color: #044d31;
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(5, 96, 60, 0.15);
 }
 
 .buyButton:active {
   background-color: #033d27;
-  transform: translateY(0);
 }
 
 .icon {
@@ -188,6 +185,11 @@
     margin: 1rem auto;
     min-height: 400px;
     max-height: 400px;
+  }
+  
+  .imageWrapper {
+    width: 85%;
+    margin: 1rem auto 0;
   }
   
   .details {
