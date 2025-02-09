@@ -28,7 +28,7 @@
   position: relative;
   width: 88%;
   margin: 1.25rem auto 0;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 4 / 5;
   overflow: hidden;
   border-radius: 0.75rem;
   background: #f8f8f8;
@@ -190,6 +190,7 @@
   .imageWrapper {
     width: 85%;
     margin: 1rem auto 0;
+    aspect-ratio: 1 / 1;
   }
   
   .details {
