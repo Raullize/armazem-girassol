@@ -107,3 +107,52 @@
     padding: 2rem;
   }
 }
+
+@media (max-width: 480px) {
+  .header {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .headerContent {
+    width: 100%;
+    padding: 1.5rem;
+    text-align: center;
+  }
+
+  .hero h1 {
+    font-size: 1.5rem;
+    letter-spacing: 0.05rem;
+  }
+
+  .hero p {
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+  }
+
+  .cta {
+    width: 100%;
+    margin-top: 1rem;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .headerContent {
+    padding: 1rem;
+  }
+
+  .hero h1 {
+    font-size: 1.3rem;
+  }
+
+  .hero p {
+    font-size: 0.8rem;
+  }
+
+  .cta {
+    padding: 0.6rem 0.8rem;
+    font-size: 0.9rem;
+  }
+}
