@@ -1,6 +1,7 @@
 import Header from "@/components/header";
 import "./globals.css";
 import { CartProvider } from "@/context/CartContext";
+import Footer from "@/components/footer";
 
 export const metadata = {
   title: "Armazem Girassol",
@@ -29,6 +30,7 @@ export default function RootLayout({ children }) {
           <Header />
           {children}
         </CartProvider>
+        <Footer />
       </body>
     </html>
   );
