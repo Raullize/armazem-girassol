@@ -10,24 +10,24 @@ export default function ProductDetail({ product }) {
   const imageSrc = product.imagem || '/noImage.png';
   const { addToCart } = useCart();
   const [quantity, setQuantity] = useState(
-    product.unidadeMedida === 'KG' ? 100 : 1
+    product.unidadeMedida === 'KG' ? 10 : 1
   );
 
   const handleQuantityChange = (e) => {
     const value = product.unidadeMedida === 'KG' 
-      ? Math.max(50, Math.ceil(Number(e.target.value) / 10) * 10)
+      ? Math.max(10, Math.ceil(Number(e.target.value) / 10) * 10)
       : Math.max(1, Number(e.target.value));
     setQuantity(value);
   };
 
   const handleIncrement = () => {
-    const step = product.unidadeMedida === 'KG' ? 50 : 1;
+    const step = product.unidadeMedida === 'KG' ? 10 : 1;
     setQuantity(prev => prev + step);
   };
 
   const handleDecrement = () => {
-    const step = product.unidadeMedida === 'KG' ? 50 : 1;
-    const minValue = product.unidadeMedida === 'KG' ? 50 : 1;
+    const step = product.unidadeMedida === 'KG' ? 10 : 1;
+    const minValue = product.unidadeMedida === 'KG' ? 10 : 1;
     setQuantity(prev => Math.max(minValue, prev - step));
   };
 
@@ -86,8 +86,8 @@ export default function ProductDetail({ product }) {
                   </button>
                   <input
                     type="number"
-                    min={product.unidadeMedida === 'KG' ? "50" : "1"}
-                    step={product.unidadeMedida === 'KG' ? "50" : "1"}
+                    min={product.unidadeMedida === 'KG' ? "10" : "1"}
+                    step={product.unidadeMedida === 'KG' ? "10" : "1"}
                     value={quantity}
                     onChange={handleQuantityChange}
                     className={styles.quantityInput}

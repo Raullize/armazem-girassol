@@ -16,18 +16,18 @@ export default function ProductItem({ nome, id, image, preco, unidade_medida }) 
   );
 
   const handleQuantityChange = (e) => {
-    const value = Math.max(50, Math.ceil(Number(e.target.value) / 10) * 10); 
+    const value = Math.max(10, Math.ceil(Number(e.target.value) / 10) * 10); 
     setQuantity(value);
   };
 
   const handleIncrement = () => {
-    const step = unidade_medida === 'KG' ? 50 : 1;
+    const step = unidade_medida === 'KG' ? 10 : 1;
     setQuantity(prev => prev + step);
   };
 
   const handleDecrement = () => {
-    const step = unidade_medida === 'KG' ? 50 : 1;
-    const minValue = unidade_medida === 'KG' ? 50 : 1;
+    const step = unidade_medida === 'KG' ? 10 : 1;
+    const minValue = unidade_medida === 'KG' ? 10 : 1;
     setQuantity(prev => Math.max(minValue, prev - step));
   };
 
@@ -38,7 +38,9 @@ export default function ProductItem({ nome, id, image, preco, unidade_medida }) 
     ? ((preco / 1000) * quantity).toFixed(2)
     : (preco * quantity).toFixed(2);
 
-  const unitLabel = unidade_medida === 'KG' ? `${quantity}g` : `${quantity} UN`;
+  const unitLabel = unidade_medida === 'KG' 
+    ? `${quantity}g` 
+    : `${quantity} UN`;
 
   return (
     <article className={styles.product}>
@@ -67,8 +69,8 @@ export default function ProductItem({ nome, id, image, preco, unidade_medida }) 
             </button>
             <input
               type="number"
-              min={unidade_medida === 'KG' ? "50" : "1"}
-              step={unidade_medida === 'KG' ? "50" : "1"}
+              min={unidade_medida === 'KG' ? "10" : "1"}
+              step={unidade_medida === 'KG' ? "10" : "1"}
               value={quantity}
               onChange={handleQuantityChange}
               className={styles.quantityInput}

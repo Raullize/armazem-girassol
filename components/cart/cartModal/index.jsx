@@ -45,7 +45,7 @@ export default function CartModal({ cart, removeFromCart, clearCart, calculateTo
                 <li key={item.id} className={styles.cartItem}>
                   <div className={styles.itemInfo}>
                     <span>
-                      <strong>{item.quantity}{item.unit}{' -  '} </strong>
+                      <strong>{item.unit === 'KG' ? `${item.quantity}g` : `${item.quantity} UN`}{' -  '} </strong>
                       {item.name}
                     </span>
                     <span>
