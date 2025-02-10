@@ -1,15 +1,24 @@
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 
 export function useCategoryFilter() {
   const [selectedCategories, setSelectedCategories] = useState([]);
 
-  const handleCategoryChange = (categoryId) => {
-    setSelectedCategories((prevSelected) =>
-      prevSelected.includes(categoryId)
-        ? prevSelected.filter((id) => id !== categoryId)
-        : [...prevSelected, categoryId]
-    );
-  };
+  const handleCategoryChange = useCallback((categoryId) => {
+    if (!categoryId) return;
+    
+    setSelectedCategories(prevSelected => {
+      // Se a categoria já estiver selecionada, não faz nada
+      if (prevSelected.includes(categoryId)) {
+        return prevSelected;
+      }
+      // Caso contrário, adiciona a categoria
+      return [categoryId];
+    });
+  }, []);
 
-  return { selectedCategories, handleCategoryChange };
+  const clearCategories = useCallback(() => {
+    setSelectedCategories([]);
+  }, []);
+
+  return { selectedCategories, handleCategoryChange, clearCategories };
 }

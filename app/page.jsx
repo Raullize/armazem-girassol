@@ -5,10 +5,14 @@ import ListCategories from "@/components/listCategories";
 import { getCategories } from "@/lib/categories";
 import ListProductsByCategory from "@/components/products/listProductsByCategory";
 
-
 async function Categories() {
-  const categories = await getCategories(); // Busca os dados do banco
-  return <ListCategories categories={categories} />;
+  try {
+    const categories = await getCategories();
+    return <ListCategories categories={categories} />;
+  } catch (error) {
+    console.error("Error fetching categories:", error);
+    return <div>Error loading categories</div>;
+  }
 }
 
 export default function Home() {
@@ -35,7 +39,7 @@ export default function Home() {
       <main>
         <ListProductsByCategory />
       </main>
-
     </>
   );
 }
+

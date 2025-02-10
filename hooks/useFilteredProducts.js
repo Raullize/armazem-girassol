@@ -1,31 +1,28 @@
-import { useState, useEffect } from 'react';
+import { useMemo } from 'react';
 
 export function useFilteredProducts(products, search, priceRange, selectedCategories, sortOrder) {
-  const [filteredProducts, setFilteredProducts] = useState(products);
+  return useMemo(() => {
+    if (!products || products.length === 0) return [];
+    
+    const lowerCaseSearch = search.toLowerCase();
 
-  useEffect(() => {
-    const applyFilters = () => {
-      const lowerCaseSearch = search.toLowerCase();
+    let filtered = products.filter((p) => {
+      const matchesSearch = p.nome.toLowerCase().includes(lowerCaseSearch);
+      const matchesPrice = p.preco >= priceRange.min && p.preco <= priceRange.max;
+      
+      // Se não houver categorias selecionadas ou se o produto pertencer a uma das categorias selecionadas
+      const matchesCategory = selectedCategories.length === 0 || selectedCategories.includes(p.idCategoria);
 
-      let filtered = products.filter((p) => {
-        const matchesSearch = p.nome.toLowerCase().includes(lowerCaseSearch);
-        const matchesPrice = p.preco >= priceRange.min && p.preco <= priceRange.max;
-        const matchesCategory = selectedCategories.length === 0 || selectedCategories.includes(p.idCategoria);
+      return matchesSearch && matchesPrice && matchesCategory;
+    });
 
-        return matchesSearch && matchesPrice && matchesCategory;
-      });
+    // Ordenação por preço
+    if (sortOrder === 'asc') {
+      filtered.sort((a, b) => a.preco - b.preco);
+    } else if (sortOrder === 'desc') {
+      filtered.sort((a, b) => b.preco - a.preco);
+    }
 
-      if (sortOrder === 'asc') {
-        filtered = filtered.sort((a, b) => a.preco - b.preco);
-      } else if (sortOrder === 'desc') {
-        filtered = filtered.sort((a, b) => b.preco - a.preco);
-      }
-
-      setFilteredProducts(filtered);
-    };
-
-    applyFilters();
-  }, [products, search, priceRange, selectedCategories, sortOrder]);
-
-  return filteredProducts;
+    return filtered;
+  }, [products, search, priceRange.min, priceRange.max, selectedCategories, sortOrder]);
 }
