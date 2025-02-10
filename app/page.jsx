@@ -4,7 +4,7 @@ import ImageSlideshow from "@/components/imageSlideshow";
 import ListCategories from "@/components/listCategories";
 import { getCategories } from "@/lib/categories";
 import ListProductsByCategory from "@/components/products/listProductsByCategory";
-import Footer from "@/components/footer";
+
 
 async function Categories() {
   const categories = await getCategories(); // Busca os dados do banco
@@ -35,7 +35,7 @@ export default function Home() {
       <main>
         <ListProductsByCategory />
       </main>
-      <Footer />
+
     </>
   );
 }
