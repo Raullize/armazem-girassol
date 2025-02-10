@@ -58,11 +58,7 @@ export default function Header() {
 
         <Nav menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
       </header>
-      <style jsx>{`
-        .${styles.header} {
-          margin: 0;
-        }
-      `}</style>
+      
     </>
   );
 }

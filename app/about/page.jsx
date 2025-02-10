@@ -82,10 +82,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <button onClick={handleWhatsAppClick} className={styles.whatsappButton}>
-        <FaWhatsapp size={24} />
-        <span>Fale Conosco</span>
-      </button>
     </main>
   );
 }
