@@ -4,7 +4,7 @@ import styles from './styles.module.css';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
-export default function NavLink({ href }) {
+export default function NavLink({ href, children }) {
   const path = usePathname();
 
   return (
@@ -12,6 +12,7 @@ export default function NavLink({ href }) {
       href={href}
       className={path.startsWith(href) ? `${styles.link} ${styles.active}` : styles.link}
     >
+      {children}
     </Link>
   );
 }
