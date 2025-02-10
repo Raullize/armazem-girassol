@@ -41,7 +41,7 @@ export default function ListProductsByCategory() {
           <div key={idCategoria} className={styles.categorySection}>
             <div className={styles.categoriesTitle}>
               <h2>{categories.nomeCategoria}</h2>
-              <Link className={styles.linkCategories} href={`/categories/${idCategoria}`}>
+              <Link className={styles.linkCategories} href={`/products?category=${idCategoria}`}>
                 Ver todos
                 <FiArrowRight />
               </Link>
