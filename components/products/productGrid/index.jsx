@@ -4,8 +4,7 @@ import ProductItem from '../productItem';
 import styles from './styles.module.css';
 
 export default function ProductsGrid({ products, searchTerm = '' }) {
-  console.log('Search Term:', searchTerm);
-  console.log('Products:', products);
+
 
   return (
     <div className={styles.gridContainer}>

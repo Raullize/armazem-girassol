@@ -10,6 +10,7 @@ import { useFilteredProducts } from '@/hooks/useFilteredProducts';
 import { useCategoryFilter } from '@/hooks/useCategoryFilter';
 import { useSortOrder } from '@/hooks/useSortOrder';
 import FilteredCategories from '@/components/filteredCategories';
+import { FiChevronDown } from 'react-icons/fi';
 
 const ITEMS_PER_PAGE = 10;
 
@@ -53,6 +54,7 @@ export default function FilteredProducts({ products, categories }) {
 
   // Handler para mudança de categoria nos checkboxes
   const handleCategoryChangeAndUpdateURL = useCallback((categoryId) => {
+    handleCategoryChange(categoryId);
     const newSearchParams = new URLSearchParams(searchParams);
     if (selectedCategories.includes(categoryId)) {
       newSearchParams.delete('category');
@@ -61,7 +63,7 @@ export default function FilteredProducts({ products, categories }) {
     }
     newSearchParams.delete('page'); // Reset para página 1 ao mudar categoria
     router.push(`/products?${newSearchParams.toString()}`);
-  }, [router, searchParams, selectedCategories]);
+  }, [router, searchParams, selectedCategories, handleCategoryChange]);
 
   const handleFilterChange = (min, max) => {
     setPriceRange({ min, max });
@@ -73,19 +75,14 @@ export default function FilteredProducts({ products, categories }) {
 
   return (
     <main className={styles.container}>
+
+
       <aside className={styles.sidebar}>
-        <div 
-          className={styles.sidebarHeader}
-          onClick={() => setIsFiltersOpen(!isFiltersOpen)}
-          role="button"
-          tabIndex={0}
-          aria-expanded={isFiltersOpen}
-        >
+        <div className={styles.sidebarHeader} onClick={() => setIsFiltersOpen(!isFiltersOpen)}>
           <h2>Filtros</h2>
-          <span className={`${styles.toggleIcon} ${isFiltersOpen ? styles.open : ''}`}>
-            ▼
-          </span>
+          <FiChevronDown className={`${styles.toggleIcon} ${isFiltersOpen ? styles.open : ''}`} />
         </div>
+
         <div className={`${styles.sidebarContent} ${isFiltersOpen ? styles.open : ''}`}>
           <section>
             <h2>Filtros</h2>

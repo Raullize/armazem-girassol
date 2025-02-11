@@ -331,17 +331,31 @@
   display: none;
 }
 
-.filters {
-  display: block;
-  display: flex;
-  gap: 1rem;
-  margin-bottom: 2rem;
-  flex-wrap: wrap;
-  justify-content: center;
-  animation: slideInLeft 0.8s ease-out;
+.sidebarHeader{
+  display: none;
 }
 
 @media (max-width: 1024px) {
+  .toggleButton {
+    display: block;
+    background-color: #05603c;
+    color: #ffffff;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 1rem;
+    transition: background-color 0.3s ease;
+  }
+
+  .toggleButton:hover {
+    background-color: #044d31;
+  }
+}
+
+@media (max-width: 768px) {
   .container {
     flex-direction: column;
     align-items: center;
@@ -392,32 +406,6 @@
 }
 
 @media (max-width: 768px) {
-  .container {
-    padding: 1rem;
-  }
-
-  .sidebar {
-    padding: 0;
-  }
-
-  .toggleButton {
-    display: block;
-    background-color: #05603c;
-    color: #ffffff;
-    padding: 0.5rem 1rem;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    width: 100%;
-    text-align: center;
-    margin-bottom: 1rem;
-    transition: background-color 0.3s ease;
-  }
-
-  .toggleButton:hover {
-    background-color: #044d31;
-  }
-
   .filters {
     display: none;
     transition: all 0.3s ease;
