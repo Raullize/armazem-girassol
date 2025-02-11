@@ -26,6 +26,7 @@
   animation: scaleIn 0.8s ease-out;
   animation-delay: 400ms;
   animation-fill-mode: both;
+  text-align: center;
 }
 
 .slideshow {
@@ -119,8 +120,8 @@
 .cta {
   width: 25rem;
   margin-top: 10rem;
-  display: flex;
-  padding: 1rem 2rem;
+  text-align: center;
+  padding: 1rem;
   font-size: 1.25rem;
   font-weight: bold;
   text-transform: uppercase;

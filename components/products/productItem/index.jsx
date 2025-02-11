@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import { FiShoppingCart, FiMinus, FiPlus } from 'react-icons/fi';
+import { ShoppingCart } from 'lucide-react';
 import styles from './styles.module.css';
 import Link from 'next/link';
 import { useCart } from '@/context/CartContext';
@@ -40,6 +41,15 @@ export default function ProductItem({ nome, id, image, preco, unidade_medida }) 
   const unitLabel = unidade_medida === 'KG' 
     ? `${quantity}g` 
     : `${quantity} UN`;
+
+  const product = {
+    id, 
+    name: nome, 
+    price: preco, 
+    quantity, 
+    image, 
+    unit: unidade_medida 
+  };
 
   return (
     <article className={styles.product}>
@@ -84,19 +94,12 @@ export default function ProductItem({ nome, id, image, preco, unidade_medida }) 
             </button>
           </div>
 
-          <button
-            className={styles.buyButton}
-            onClick={() => addToCart({ 
-              id, 
-              name: nome, 
-              price: preco, 
-              quantity, 
-              image, 
-              unit: unidade_medida 
-            })}
+          <button 
+            onClick={() => addToCart(product)}
+            className={styles.addToCartButton}
           >
-            <FiShoppingCart className={styles.icon} />
-            Comprar
+            <ShoppingCart className={styles.cartIcon} />
+            <span className={styles.buttonText}>Comprar</span>
           </button>
         </div>
       </div>
