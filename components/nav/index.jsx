@@ -23,7 +23,7 @@ export default function Nav() {
             <NavLink href="/">Início</NavLink>
           </li>
           <li>
-            <NavLink href="/products">Nossos produtos</NavLink>
+            <NavLink href="/products">Nossos Produtos</NavLink>
           </li>
           <li>
             <NavLink href="/about">Sobre Nós</NavLink>
