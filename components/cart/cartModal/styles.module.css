@@ -163,6 +163,19 @@
   background: #044d31;
 }
 
+.cartButton {
+  transition: all 0.3s ease;
+}
+
+.cartButton:hover {
+  transform: rotate(15deg);
+  background-color: #044d31;
+}
+
+.cartIcon {
+  transition: transform 0.3s ease;
+}
+
 .emptyMessage {
   text-align: center;
   color: #777;
