@@ -48,7 +48,8 @@ export default function ProductDetail({ product }) {
             <Image 
               src={imageSrc} 
               alt={product.nome} 
-              fill 
+              width={500}
+              height={500}
               className={styles.mainImage} 
               priority 
             />
