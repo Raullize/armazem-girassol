@@ -4,14 +4,9 @@ import React from 'react';
 import NavLink from '../nav-link';
 import styles from './styles.module.css';
 import { Menu, X } from 'lucide-react';
-import { FaWhatsapp } from 'react-icons/fa';
 
 export default function Nav() {
   const [menuOpen, setMenuOpen] = React.useState(false);
-
-  const handleWhatsAppClick = () => {
-    window.open('https://wa.me/5519999999999', '_blank');
-  };
 
   return (
     <>
@@ -32,12 +27,6 @@ export default function Nav() {
           </li>
           <li>
             <NavLink href="/about">Sobre Nós</NavLink>
-          </li>
-          <li>
-            <button onClick={handleWhatsAppClick} className={styles.whatsappButton}>
-              <FaWhatsapp size={20} />
-              <span>WhatsApp</span>
-            </button>
           </li>
         </ul>
       </nav>
