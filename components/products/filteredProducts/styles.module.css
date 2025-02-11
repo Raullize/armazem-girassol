@@ -28,7 +28,7 @@
   max-width: 300px;
   padding: 0.5rem;
   background-color: #ffffff;
-  border-radius: 1.5rem;
+  border-radius: 0.5rem;
   box-shadow: 
     0 20px 40px -15px rgba(0, 0, 0, 0.1),
     0 10px 25px -10px rgba(0, 0, 0, 0.05);
@@ -39,7 +39,6 @@
 }
 
 .sidebar:hover {
-  transform: translateY(-10px) rotateX(2deg);
   box-shadow: 
     0 25px 50px -20px rgba(0, 0, 0, 0.15),
     0 15px 35px -15px rgba(0, 0, 0, 0.1);
