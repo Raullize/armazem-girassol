@@ -26,7 +26,7 @@
   width: 20%;
   min-width: 250px;
   max-width: 300px;
-  padding: 2rem;
+  padding: 0.5rem;
   background-color: #ffffff;
   border-radius: 1.5rem;
   box-shadow: 
@@ -283,6 +283,16 @@
   }
 }
 
+.sidebarHeader {
+  display: none;
+}
+
+.sidebarContent {
+  display: block;
+  max-height: none;
+  padding: 1rem;
+}
+
 @media (max-width: 1024px) {
   .container {
     flex-direction: column;
@@ -293,24 +303,63 @@
   .sidebar {
     width: 100%;
     max-width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 2rem;
+    padding: 0;
+    margin-bottom: 2rem;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
   }
 
-  .sidebar h1 {
-    font-size: 1.75rem;
+  .sidebarHeader {
+    padding: 1rem 2rem;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .sidebarHeader:hover {
+    background-color: rgba(5, 96, 60, 0.05);
+  }
+
+  .sidebarHeader h2 {
+    margin: 0;
+    font-size: 1.25rem;
+    color: #05603c;
+  }
+
+  .sidebarContent {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+    background-color: #ffffff;
+    padding: 0;
+  }
+
+  .sidebarContent.open {
+    max-height: 1000px;
+    padding: 1rem;
+  }
+
+  .toggleIcon {
+    transition: transform 0.3s ease;
+  }
+
+  .toggleIcon.open {
+    transform: rotate(180deg);
   }
 
   .sidebar section {
     width: 100%;
-    max-width: 600px;
+    max-width: 100%;
+    margin-bottom: 2rem;
   }
 
   .sort {
     width: 100%;
-    max-width: 600px;
+    max-width: 100%;
   }
 
   .productsSection {
@@ -320,7 +369,7 @@
 
 @media (max-width: 768px) {
   .sidebar {
-    padding: 1rem;
+    padding: 0;
   }
 
   .toggleButton {
