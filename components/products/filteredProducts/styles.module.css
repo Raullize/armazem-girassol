@@ -14,6 +14,7 @@
   background-color: transparent;
   min-height: calc(100vh - 100px);
   position: relative;
+  width: 100%;
 }
 
 .container::before,
@@ -227,6 +228,59 @@
 
 .filters {
   display: block;
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  animation: slideInLeft 0.8s ease-out;
+}
+
+.filterButton {
+  padding: 0.5rem 1rem;
+  border: 2px solid var(--primary-color);
+  border-radius: 25px;
+  background: transparent;
+  color: var(--primary-color);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.filterButton:hover,
+.filterButton.active {
+  background: var(--primary-color);
+  color: white;
+}
+
+.productsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 2rem;
+  padding: 1rem 0;
+  animation: fadeIn 0.8s ease-out;
+  animation-delay: 300ms;
+  animation-fill-mode: both;
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @media (max-width: 1024px) {
@@ -294,6 +348,15 @@
 
   .filters.open {
     display: block;
+  }
+
+  .filters {
+    padding: 0 1rem;
+  }
+  
+  .productsGrid {
+    padding: 1rem;
+    gap: 1rem;
   }
 }
 

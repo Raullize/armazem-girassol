@@ -25,7 +25,9 @@ export default function Home() {
       <header className={styles.header}>
         <div className={styles.headerContent}>
           <div className={styles.hero}>
-            <h1 className={styles.title}>Bem-estar natural<br></br> para sua vida</h1>
+            <h1 className={styles.title}>
+              Bem-estar natural<br></br> para sua vida
+            </h1>
             <p>Escolha saúde com nossos produtos naturais.</p>
           </div>
           <button className={styles.cta}>
@@ -42,4 +44,3 @@ export default function Home() {
     </>
   );
 }
-

@@ -1,4 +1,3 @@
-// app/products/page.js (executado no servidor)
 import { Suspense } from 'react';
 import { getProducts } from '@/lib/products';
 import { getCategories } from '@/lib/categories';

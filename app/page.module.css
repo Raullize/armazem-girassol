@@ -1,3 +1,81 @@
+.categories {
+  animation: slideInLeft 0.8s ease-out;
+}
+
+.headerContent {
+  animation: fadeIn 0.8s ease-out;
+}
+
+.hero {
+  position: relative;
+}
+
+.title {
+  animation: slideInUp 0.8s ease-out;
+  animation-delay: 200ms;
+  animation-fill-mode: both;
+}
+
+.hero p {
+  animation: slideInUp 0.8s ease-out;
+  animation-delay: 300ms;
+  animation-fill-mode: both;
+}
+
+.cta {
+  animation: scaleIn 0.8s ease-out;
+  animation-delay: 400ms;
+  animation-fill-mode: both;
+}
+
+.slideshow {
+  animation: fadeIn 0.8s ease-out;
+  animation-delay: 200ms;
+  animation-fill-mode: both;
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 .header {
   display: flex;
   width: 100%;

@@ -10,6 +10,7 @@
   min-height: calc(100vh - 100px);
   background-color: var(--background-color);
   padding: 1rem;
+  animation: fadeIn 0.8s ease-out;
 }
 
 .productWrapper {
@@ -20,6 +21,9 @@
   border-radius: var(--border-radius);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
   overflow: hidden;
+  animation: slideInUp 0.8s ease-out;
+  animation-delay: 200ms;
+  animation-fill-mode: both;
 }
 
 .imageSection {
@@ -30,6 +34,9 @@
   align-items: center;
   padding: 2rem;
   background-color: #f9f9f9;
+  animation: fadeIn 0.8s ease-out;
+  animation-delay: 400ms;
+  animation-fill-mode: both;
 }
 
 .imageBorder {
@@ -57,6 +64,9 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  animation: slideInRight 0.8s ease-out;
+  animation-delay: 300ms;
+  animation-fill-mode: both;
 }
 
 .productHeader {
@@ -113,6 +123,9 @@
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  animation: slideInUp 0.8s ease-out;
+  animation-delay: 500ms;
+  animation-fill-mode: both;
 }
 
 .quantityControl {
@@ -220,4 +233,35 @@
   text-align: center;
   font-style: italic;
   margin-top: 1rem;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
