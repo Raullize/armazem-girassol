@@ -49,10 +49,6 @@ export default function FilteredProducts({ products, categories }) {
   return (
     <main className={styles.container}>
       <aside className={styles.sidebar}>
-        <h1>
-          Produtos deliciosos<span className={styles.highlight}> para você</span>
-        </h1>
-
         <section>
           <h2>Filtros</h2>
           <hr className={styles.hr} />
