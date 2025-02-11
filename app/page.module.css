@@ -89,7 +89,6 @@
   height: 100%;
   display: grid;
   place-content: center;
-  justify-content: space-around;
   padding: 10rem;
 }
 
@@ -146,7 +145,7 @@
 }
 
 
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
   .slideshow {
     display: none;
   }
@@ -162,6 +161,7 @@
   }
   .hero {
     height: 100%;
+    text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
