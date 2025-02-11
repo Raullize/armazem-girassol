@@ -7,18 +7,20 @@ import styles from './styles.module.css';
 export default function PriceRangeSlider({ products, onFilterChange }) {
   const [minPrice, setMinPrice] = useState(0);
   const [maxPrice, setMaxPrice] = useState(100);
-  const [selectedRange, setSelectedRange] = useState([minPrice, maxPrice]);
+  const [selectedRange, setSelectedRange] = useState([0, 100]);
+  const [initialized, setInitialized] = useState(false);
 
   useEffect(() => {
-    if (products.length > 0) {
+    if (products && products.length > 0 && !initialized) {
       const prices = products.map((p) => p.preco);
       const min = Math.min(...prices);
       const max = Math.max(...prices);
       setMinPrice(min);
       setMaxPrice(max);
       setSelectedRange([min, max]);
+      setInitialized(true);
     }
-  }, [products]);
+  }, [products, initialized]);
 
   const handleRangeChange = (value) => {
     setSelectedRange(value);

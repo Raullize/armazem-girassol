@@ -8,5 +8,9 @@ export default async function ProductsPage({ searchParams }) {
   const products = await getProducts(categoryId);
   const categories = await getCategories();
 
-  return <FilteredProducts products={products} categories={categories} />;
+  return (
+    <Suspense fallback={<div>Carregando...</div>}>
+      <FilteredProducts products={products} categories={categories} />
+    </Suspense>
+  );
 }
