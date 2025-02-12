@@ -1,6 +1,6 @@
 .sliderContainer {
   position: relative;
-  margin: 0 20px;
+  margin: 0 0.75rem;
   padding-bottom: 3rem;
 }
 
@@ -111,8 +111,9 @@
 }
 
 .sliderContainer :global(.slick-dots li button:before) {
+  margin-top: 1.5rem;
   font-size: 10px;
-  color: #e2e8f0;
+  color: #fff;
   opacity: 1;
   transition: all 0.2s ease;
 }
