@@ -6,9 +6,9 @@
 }
 
 .container {
+  margin: 1rem;
   display: flex;
   flex-wrap: wrap;
-  gap: 2rem;
   background-color: transparent;
   min-height: calc(100vh - 100px);
   position: relative;
@@ -335,8 +335,16 @@
   display: none;
 }
 
+
+
 @media (max-width: 1024px) {
-  .toggleButton {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+.toggleButton {
     display: block;
     background-color: #05603c;
     color: #ffffff;
@@ -352,14 +360,6 @@
 
   .toggleButton:hover {
     background-color: #044d31;
-  }
-}
-
-@media (max-width: 768px) {
-  .container {
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
   }
 
   .sidebar {

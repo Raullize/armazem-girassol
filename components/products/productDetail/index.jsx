@@ -69,12 +69,12 @@ export default function ProductDetail({ product }) {
               {product.descricao}
             </p>
 
-            <div className={styles.priceSection}>
+
               <span className={styles.productPrice}>
                 R$ {product.preco.toFixed(2)}
                 <span className={styles.unitLabel}>/{product.unidadeMedida === 'KG' ? '100g' : 'UN'}</span>
               </span>
-            </div>
+
 
             {isAvailable ? (
               <div className={styles.purchaseSection}>

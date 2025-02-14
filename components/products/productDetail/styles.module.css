@@ -105,23 +105,26 @@
 
 .priceSection {
   margin-bottom: 2rem;
+  text-align: center;
 }
 
 .productPrice {
   font-size: 1.5rem;
   font-weight: 700;
   color: var(--primary-color);
-  display: flex;
   align-items: baseline;
+
 }
 
 .unitLabel {
+ 
   font-size: 1rem;
   color: #666;
   margin-left: 0.5rem;
 }
 
-.purchaseSection {
+.purchaseSection { 
+  margin-top: 1rem;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
@@ -269,6 +272,8 @@
   .priceSection,
   .purchaseSection {
     align-items: center;
+    margin-bottom: 2rem;
+    text-align: center;
   }
 }
 
