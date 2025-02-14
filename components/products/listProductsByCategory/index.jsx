@@ -13,11 +13,16 @@ export default function ListProductsByCategory() {
   useEffect(() => {
     async function fetchProducts() {
       try {
+        console.log('Iniciando busca de produtos...');
         const response = await fetch('/api/products/categories');
+        console.log('Status da resposta:', response.status);
         if (!response.ok) {
-          throw new Error('Failed to fetch products');
+          const errorText = await response.text();
+          console.error('Erro na resposta:', errorText);
+          throw new Error(`Failed to fetch products: ${response.status} ${errorText}`);
         }
         const data = await response.json();
+        console.log('Dados recebidos:', data);
         setGroupedProducts(data);
       } catch (error) {
         console.error('Error loading products:', error);

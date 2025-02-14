@@ -1,15 +1,12 @@
 :root {
   /* Primary Colors */
-  --sunflower-yellow: #FFD700;
-  --light-yellow: #d9ffd6;
-  --cream-yellow: #FFF3E0;
-  --warm-yellow: #FFE082;
-  
-  /* Accent Colors */
-  --nature-accent-1: #91c788;
-  --nature-accent-2: #52734d;
-  --nature-accent-3: #feffde;
-  
+  --forest-green: #4CAF50; /* Use for buttons and highlights */
+  --sand-beige: #f0f3e1;/* Use for main backgrounds */
+
+  /* Secondary Colors */
+  --earth-brown: #8B4513;  /* Use for smaller text or decorative elements */
+  --mint-green: #A8D5BA;   /* Use for section backgrounds or subtle highlights */
+
   /* Neutral Colors */
   --snow-white: #FFFFFF;
   --light-gray: #EEEEEE;
