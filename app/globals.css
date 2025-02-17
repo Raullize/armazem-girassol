@@ -24,7 +24,7 @@
 /* Modern background with layered design */
 body { 
   font-family: Arial, Helvetica, sans-serif;
-  background-color:#edfaeb;
+  background-color: var(--sand-beige);
 }
 
 
