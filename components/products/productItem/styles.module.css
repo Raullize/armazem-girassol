@@ -15,7 +15,7 @@
 }
 
 .product:hover {
-  transform: translateY(-12px);
+  transform: translateY(-8px);
   box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 
@@ -142,7 +142,7 @@
   padding: 0.75rem 1.5rem;
   font-size: 1rem;
   border: 2px solid rgba(5, 96, 60, 0.2);
-  border-radius: 0.75rem;
+  border-radius: 0.5rem;
   text-align: center;
   transition: all 0.3s ease;
   background: #f8fafc;
@@ -229,11 +229,11 @@
   justify-content: center;
   gap: 0.75rem;
   width: 100%;
-  padding: 0.75rem 1rem;
+  padding: 0.75rem 0.75rem;
   background: linear-gradient(135deg, #05603c 0%, #067a4d 100%);
   color: white;
   border: none;
-  border-radius: 8px;
+  border-radius: 0.5rem;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -275,10 +275,7 @@
     margin: 1rem auto;
   }
   
-  .imageWrapper {
-    width: 100%;
-    max-width: 100%;
-  }
+
 
   .image {
     width: 100%;
