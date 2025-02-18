@@ -4,16 +4,8 @@ import ProductItem from '../productItem';
 import styles from './styles.module.css';
 
 export default function ProductsGrid({ products, searchTerm = '' }) {
-
-
   return (
     <div className={styles.gridContainer}>
-      {searchTerm && (
-        <div className={styles.searchInfo}>
-          Pesquisa por "{searchTerm}"
-        </div>
-      )}
-      
       {products.length > 0 ? (
         <ul className={styles.products}>
           {products.map(product => (

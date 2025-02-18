@@ -116,7 +116,7 @@ export default function FilteredProducts({ products, categories }) {
       <section className={styles.productsSection}>
         {search && (
           <div className={styles.searchInfo}>
-            Mostrando resultados para: {search}
+            Pesquisa por "{search}"
           </div>
         )}
         
