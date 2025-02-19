@@ -98,7 +98,7 @@ OPÇÃO DE ENTREGA: ${localFormData.deliveryOption}
 MÉTODO DE PAGAMENTO: ${localFormData.paymentMethod}`;
 
       window.open(
-        `https://wa.me/+5551999832724?text=${encodeURIComponent(message)}`, 
+        `https://wa.me/5551997572837?text=${encodeURIComponent(message)}`, 
         '_blank'
       );
 
