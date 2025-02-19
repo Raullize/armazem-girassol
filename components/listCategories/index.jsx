@@ -6,6 +6,9 @@ import styles from './styles.module.css';
 
 export default function ListCategories({ categories }) {
   const router = useRouter();
+  const MAX_CATEGORIES = 10;
+  const shouldShowViewMore = categories.length > MAX_CATEGORIES;
+  const visibleCategories = categories.slice(0, MAX_CATEGORIES);
 
   const handleCategoryClick = (categoryId) => {
     router.push(`/products?category=${categoryId}`);
@@ -14,13 +17,20 @@ export default function ListCategories({ categories }) {
   return (
     <section className={styles.categoriesHeader}>
       <ul className={styles.categoriesList}>
-        {categories.map((category) => (
+        {visibleCategories.map((category) => (
           <li key={category.id}>
             <Link href={`/products?category=${category.id}`}>
               <span>{category.nome}</span>
             </Link>
           </li>
         ))}
+        {shouldShowViewMore && (
+          <li>
+            <Link href="/products" className={styles.viewMore}>
+              <span>Ver Mais</span>
+            </Link>
+          </li>
+        )}
       </ul>
     </section>
   );
