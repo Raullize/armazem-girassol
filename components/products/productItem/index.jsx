@@ -1,15 +1,14 @@
 'use client';
 
 import Image from 'next/image';
-import { FiShoppingCart, FiMinus, FiPlus } from 'react-icons/fi';
-import { ShoppingCart } from 'lucide-react';
+import { ShoppingCart, Ban, Plus, Minus } from 'lucide-react';
 import styles from './styles.module.css';
 import Link from 'next/link';
 import { useCart } from '@/context/CartContext';
 import { useState } from 'react';
 import { capitalizeWords } from '@/lib/formatText';
 
-export default function ProductItem({ nome, id, image, preco, unidade_medida }) {
+export default function ProductItem({ nome, id, image, preco, unidade_medida, quantidade }) {
   const imageSrc = image || '/assets/images/noImage.png';
   const { addToCart } = useCart();
   const [quantity, setQuantity] = useState(
@@ -52,8 +51,10 @@ export default function ProductItem({ nome, id, image, preco, unidade_medida }) 
     unit: unidade_medida 
   };
 
+  const isOutOfStock = quantidade === 0;
+
   return (
-    <article className={styles.product}>
+    <article className={`${styles.product} ${isOutOfStock ? styles.outOfStock : ''}`}>
       <Link href={`/products/${id}`} className={styles.imageWrapper}>
         <Image src={imageSrc} alt={nome} fill className={styles.image} />
       </Link>
@@ -75,7 +76,7 @@ export default function ProductItem({ nome, id, image, preco, unidade_medida }) 
               className={`${styles.quantityButton} ${styles.decrementButton}`}
               aria-label="Diminuir quantidade"
             >
-              <FiMinus />
+              <Minus />
             </button>
             <input
               type="number"
@@ -91,16 +92,26 @@ export default function ProductItem({ nome, id, image, preco, unidade_medida }) 
               className={`${styles.quantityButton} ${styles.incrementButton}`}
               aria-label="Aumentar quantidade"
             >
-              <FiPlus />
+              <Plus />
             </button>
           </div>
 
           <button 
             onClick={() => addToCart(product)}
-            className={styles.addToCartButton}
+            className={`${styles.addToCartButton} ${isOutOfStock ? styles.disabled : ''}`}
+            disabled={isOutOfStock}
           >
-            <ShoppingCart className={styles.cartIcon} />
-            <span className={styles.buttonText}>Comprar</span>
+            {isOutOfStock ? (
+              <>
+                <Ban className={styles.icon} />
+                <span className={styles.buttonText}>Indisponível</span>
+              </>
+            ) : (
+              <>
+                <ShoppingCart className={styles.icon} />
+                <span className={styles.buttonText}>Adicionar</span>
+              </>
+            )}
           </button>
         </div>
       </div>

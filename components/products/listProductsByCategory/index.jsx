@@ -20,7 +20,15 @@ export default function ListProductsByCategory() {
           throw new Error(`Failed to fetch products: ${response.status} ${errorText}`);
         }
         const data = await response.json();
-        setGroupedProducts(data);
+        
+        // Filtrar categorias sem produtos disponíveis
+        const filteredData = Object.fromEntries(
+          Object.entries(data).filter(([_, category]) => 
+            category.produtos.some(product => product.quantidade > 0)
+          )
+        );
+        
+        setGroupedProducts(filteredData);
       } catch (error) {
         console.error('Error loading products:', error);
       } finally {
@@ -33,6 +41,10 @@ export default function ListProductsByCategory() {
 
   if (isLoading) {
     return <div className={styles.loading}>Carregando produtos...</div>;
+  }
+
+  if (Object.keys(groupedProducts).length === 0) {
+    return <div className={styles.noProducts}>Nenhum produto disponível no momento.</div>;
   }
 
   return (

@@ -15,7 +15,8 @@ export default function ProductsGrid({ products, searchTerm = '' }) {
                 nome={product.nome}
                 preco={product.preco}
                 image={product.imagem}
-                {...product}
+                unidade_medida={product.unidade_medida}
+                quantidade={product.quantidade}
               />
             </li>
           ))}
