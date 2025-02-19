@@ -8,7 +8,7 @@ import { useCart } from '@/context/CartContext';
 import { capitalizeWords } from '@/lib/formatText';
 
 export default function ProductDetail({ product }) {
-  const imageSrc = product.imagem || '/noImage.png';
+  const imageSrc = product.imagem || '/assets/images/noImage.png';
   const { addToCart } = useCart();
   const [quantity, setQuantity] = useState(
     product.unidadeMedida === 'KG' ? 10 : 1
