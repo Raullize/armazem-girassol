@@ -7,6 +7,7 @@ import styles from './styles.module.css';
 import Link from 'next/link';
 import { useCart } from '@/context/CartContext';
 import { useState } from 'react';
+import { capitalizeWords } from '@/lib/formatText';
 
 export default function ProductItem({ nome, id, image, preco, unidade_medida }) {
   const imageSrc = image || '/noImage.png';
@@ -59,7 +60,7 @@ export default function ProductItem({ nome, id, image, preco, unidade_medida }) 
 
       <div className={styles.details}>
         <Link href={`/products/${id}`}>
-          <h2 className={styles.productName}>{nome}</h2>
+          <h2 className={styles.productName}>{capitalizeWords(nome)}</h2>
         </Link>
 
         <p className={styles.price}>

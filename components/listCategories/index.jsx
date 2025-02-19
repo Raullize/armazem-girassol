@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import styles from './styles.module.css';
+import { capitalizeWords } from '@/lib/formatText';
 
 export default function ListCategories({ categories }) {
   const router = useRouter();
@@ -20,7 +21,7 @@ export default function ListCategories({ categories }) {
         {visibleCategories.map((category) => (
           <li key={category.id}>
             <Link href={`/products?category=${category.id}`}>
-              <span>{category.nome}</span>
+              <span>{capitalizeWords(category.nome)}</span>
             </Link>
           </li>
         ))}

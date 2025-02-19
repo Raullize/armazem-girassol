@@ -5,6 +5,7 @@ import styles from './styles.module.css';
 import { FiShoppingCart } from 'react-icons/fi';
 import { useState } from 'react';
 import { useCart } from '@/context/CartContext';
+import { capitalizeWords } from '@/lib/formatText';
 
 export default function ProductDetail({ product }) {
   const imageSrc = product.imagem || '/noImage.png';
@@ -61,7 +62,7 @@ export default function ProductDetail({ product }) {
             <span className={`${styles.badge} ${!isAvailable ? styles.unavailable : ''}`}>
               {isAvailable ? 'Disponível' : 'Indisponível'}
             </span>
-            <h1 className={styles.productTitle}>{product.nome}</h1>
+            <h1 className={styles.productTitle}>{capitalizeWords(product.nome)}</h1>
           </div>
 
           <div className={styles.productDetails}>
