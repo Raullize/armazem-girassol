@@ -12,7 +12,7 @@ import { useSortOrder } from '@/hooks/useSortOrder';
 import FilteredCategories from '@/components/filteredCategories';
 import { FiChevronDown } from 'react-icons/fi';
 
-const ITEMS_PER_PAGE = 10;
+const ITEMS_PER_PAGE = 12;
 
 export default function FilteredProducts({ products, categories }) {
   const router = useRouter();
