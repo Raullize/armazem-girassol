@@ -6,7 +6,7 @@ import styles from './styles.module.css';
 import Link from 'next/link';
 import { useCart } from '@/context/CartContext';
 import { useState } from 'react';
-import { capitalizeWords } from '@/lib/formatText';
+import { capitalizeWords } from '@/utils/formatText';
 
 export default function ProductItem({ nome, id, image, preco, unidade_medida, quantidade }) {
   const imageSrc = image || '/assets/images/noImage.png';
