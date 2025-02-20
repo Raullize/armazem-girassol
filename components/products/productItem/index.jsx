@@ -103,7 +103,7 @@ export default function ProductItem({ nome, id, image, preco, unidade_medida, qu
           >
             {isOutOfStock ? (
               <>
-                <Ban className={styles.icon} />
+                <Ban size={32} className={styles.icon} />
                 <span className={styles.buttonText}>Indisponível</span>
               </>
             ) : (
