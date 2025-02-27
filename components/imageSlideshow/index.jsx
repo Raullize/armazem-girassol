@@ -4,14 +4,12 @@ import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import styles from './styles.module.css';
 
-import imgSunFlower from '@/public/assets/images/sunflowers.webp';
-import imgArmazem from '@/public/assets/images/armazem.webp';
-import imgBalcao from '@/public/assets/images/balcao.webp';
-
 import imgProprietarias from '@/public/assets/images/pictures/fotoProprietarias3x4.webp';
-import imgEstante1X1 from '@/public/assets/images/pictures/fotoEstante1x1.webp';
+import imgArmazem from '@/public/assets/images/armazem.webp';
 import imgBalcao3x4 from '@/public/assets/images/pictures/fotoBalcao3x4.webp';
+import imgEstante1X1 from '@/public/assets/images/pictures/fotoEstante1x1.webp';
 import imgBalcaoEntrada from '@/public/assets/images/pictures/fotoBalcaoEntrada1x1.webp';
+import imgSunFlower from '@/public/assets/images/sunflowers.webp';
 
 const images = [  
   { image: imgProprietarias, alt: 'Foto da proprietária Adriana Bayon Borges'},
