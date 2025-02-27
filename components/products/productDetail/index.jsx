@@ -5,7 +5,7 @@ import styles from './styles.module.css';
 import { FiShoppingCart } from 'react-icons/fi';
 import { useState } from 'react';
 import { useCart } from '@/context/CartContext';
-import { capitalizeWords } from '@/lib/formatText';
+import { capitalizeWords } from '@/utils/formatText';
 
 export default function ProductDetail({ product }) {
   const imageSrc = product.imagem || '/assets/images/noImage.png';
