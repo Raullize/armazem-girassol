@@ -7,12 +7,18 @@ import styles from './styles.module.css';
 import imgSunFlower from '@/public/assets/images/sunflowers.webp';
 import imgArmazem from '@/public/assets/images/armazem.webp';
 import imgBalcao from '@/public/assets/images/balcao.webp';
-import imgPrateleira from '@/public/assets/images/prateleira.webp';
 
-const images = [
-  { image: imgArmazem, alt: 'Imagem do local armazemGirassol' },
-  { image: imgBalcao, alt: 'Foto do balcão do local' },
-  { image: imgPrateleira, alt: 'Foto da prateleira do armazemGirassol' },
+import imgProprietarias from '@/public/assets/images/pictures/fotoProprietarias3x4.webp';
+import imgEstante1X1 from '@/public/assets/images/pictures/fotoEstante1x1.webp';
+import imgBalcao3x4 from '@/public/assets/images/pictures/fotoBalcao3x4.webp';
+import imgBalcaoEntrada from '@/public/assets/images/pictures/fotoBalcaoEntrada1x1.webp';
+
+const images = [  
+  { image: imgProprietarias, alt: 'Foto da proprietária Adriana Bayon Borges'},
+  { image: imgArmazem, alt: 'Imagem do local armazemGirassol' }, 
+  { image: imgBalcao3x4, alt: 'Foto da ampla dentro do armazem' },
+  { image: imgEstante1X1, alt: 'Foto da prateleira do armazemGirassol' },
+  { image: imgBalcaoEntrada, alt: 'Foto do balcão do local' },
   { image: imgSunFlower, alt: 'Imagem de girassois' },
 ];
 
