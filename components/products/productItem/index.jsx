@@ -51,7 +51,7 @@ export default function ProductItem({ nome, id, image, preco, unidade_medida, qu
     unit: unidade_medida 
   };
 
-  const isOutOfStock = quantidade === 0;
+  const isOutOfStock = +quantidade === 0;
 
   return (
     <article className={`${styles.product} ${isOutOfStock ? styles.outOfStock : ''}`}>
