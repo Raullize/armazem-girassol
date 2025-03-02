@@ -1,4 +1,4 @@
-# Armazem Girassol - E-commerce de Produtos Naturais 🌿🌻 
+# Armazem Girassol 🌿🌻 
 
 ## 📝 Descrição do Projeto
 
