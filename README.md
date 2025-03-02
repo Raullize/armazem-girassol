@@ -1,10 +1,10 @@
-# Armazem Girassol - E-commerce de Produtos Naturais
+# 🌻 Armazem Girassol - E-commerce de Produtos Naturais 🌿
 
-## Descrição do Projeto
+## 📝 Descrição do Projeto
 
 Armazem Girassol é um e-commerce especializado em produtos naturais, oferecendo uma experiência de compra intuitiva e moderna. O projeto foi desenvolvido com foco na usabilidade, design responsivo e facilidade de navegação.
 
-## Funcionalidades Principais
+## 🛠️ Funcionalidades Principais
 
 - Catálogo de produtos naturais
 - Filtro de produtos por categoria e preço
@@ -13,7 +13,7 @@ Armazem Girassol é um e-commerce especializado em produtos naturais, oferecendo
 - Design responsivo para dispositivos móveis
 - Navegação intuitiva
 
-## Tecnologias Utilizadas
+## 💻 Tecnologias Utilizadas
 
 - Next.js 13
 - React
@@ -21,12 +21,12 @@ Armazem Girassol é um e-commerce especializado em produtos naturais, oferecendo
 - Context API
 - Hooks personalizados
 
-## Requisitos
+## 📋 Requisitos
 
 - Node.js (versão 16 ou superior)
 - npm
 
-## Instalação
+## 🚀 Instalação
 
 1. Clone o repositório:
 ```bash
@@ -43,7 +43,7 @@ cd armazem-girassol
 npm install
 ```
 
-## Rodando o Projeto
+## ▶️ Rodando o Projeto
 
 Para iniciar o servidor de desenvolvimento:
 
