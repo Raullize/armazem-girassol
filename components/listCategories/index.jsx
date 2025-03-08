@@ -7,7 +7,7 @@ import { capitalizeWords } from '@/utils/formatText';
 
 export default function ListCategories({ categories }) {
   const router = useRouter();
-  const MAX_CATEGORIES = 10;
+  const MAX_CATEGORIES = 8;
   const shouldShowViewMore = categories.length > MAX_CATEGORIES;
   const visibleCategories = categories.slice(0, MAX_CATEGORIES);
 
@@ -27,7 +27,7 @@ export default function ListCategories({ categories }) {
         ))}
         {shouldShowViewMore && (
           <li>
-            <Link href="/products" className={styles.viewMore}>
+            <Link href="/products">
               <span>Ver Mais</span>
             </Link>
           </li>

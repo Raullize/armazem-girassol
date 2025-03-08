@@ -5,6 +5,7 @@ import styles from './styles.module.css';
 import Link from "next/link";
 import { FiArrowRight } from 'react-icons/fi';
 import CarouselProducts from '../carouselProducts';
+import { capitalizeWords } from '@/utils/formatText';
 
 export default function ListProductsByCategory() {
   const [groupedProducts, setGroupedProducts] = useState({});
@@ -54,7 +55,7 @@ export default function ListProductsByCategory() {
         return (
           <div key={idCategoria} className={styles.categorySection}>
             <div className={styles.categoriesTitle}>
-              <h2>{categories.nomeCategoria}</h2>
+            <h2>{capitalizeWords(categories.nomeCategoria)}</h2>
               <Link className={styles.linkCategories} href={`/products?category=${idCategoria}`}>
                 Ver todos
                 <FiArrowRight />
