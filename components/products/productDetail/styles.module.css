@@ -2,7 +2,7 @@
   --primary-color: #57c575;
   --secondary-color: #2a804e;
   --text-color: #333;
-  --background-color: #eef4d4;
+  --background-color: var(--sand-beige);
   --border-radius: 12px;
   --border-color: #ccc;
   --hover-color: #f0f0f0;
