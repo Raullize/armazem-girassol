@@ -27,9 +27,6 @@ Armazem Girassol é um e-commerce especializado em produtos naturais, oferecendo
 ## 🚀 Instalação
 
 1. Clone o repositório:
-```bash
-git clone https://github.com/seu-usuario/armazem-girassol.git
-```
 
 2. Navegue até o diretório do projeto:
 ```bash
