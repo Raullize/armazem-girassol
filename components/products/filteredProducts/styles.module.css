@@ -338,16 +338,17 @@
   display: none;
 }
 
-
-
 @media (max-width: 1024px) {
   .container {
     flex-direction: column;
     align-items: center;
     gap: 2rem;
+    margin: 0.5rem;
+    padding: 0.5rem;
+    width: calc(100% - 1rem);
   }
 
-.toggleButton {
+  .toggleButton {
     display: block;
     background-color: #05603c;
     color: #ffffff;
@@ -372,6 +373,7 @@
     border-radius: 0.75rem;
     overflow: hidden;
     transition: all 0.3s ease-in-out;
+    margin-top: 4px;
   }
 
   .sidebarHeader {
@@ -429,6 +431,17 @@
 
   .productsSection {
     padding: 0;
+    width: 100%;
+  }
+  
+  .container {
+    margin: 0 4px;
+    padding: 0.5rem 4px;
+    width: calc(100% - 8px);
+  }
+
+  .sidebar {
+    margin-top: 4px;
   }
 }
 
@@ -443,6 +456,22 @@
 
   .sort label {
     font-size: 1rem;
+  }
+  
+  .container {
+    margin: 0 4px;
+    padding: 0 4px;
+    width: calc(100% - 8px);
+  }
+  
+  .productsSection {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+
+  .sidebar {
+    margin-top: 4px;
   }
 }
 
