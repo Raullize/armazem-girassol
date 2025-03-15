@@ -89,11 +89,11 @@
 }
 
 .prevArrow {
-  left: -26px !important;
+  left: -6px !important;
 }
 
 .nextArrow {
-  right: -26px !important;
+  right: -6px !important;
 }
 
 .arrow:global(.slick-disabled) {
@@ -126,16 +126,16 @@
 /* Responsividade */
 @media (max-width: 768px) {
   .prevArrow {
-    left: -20px !important;
+    left: -32px !important;
   }
 
   .nextArrow {
-    right: -20px !important;
+    right: -32px !important;
   }
 
   .arrow {
-    width: 44px !important;
-    height: 44px !important;
+    width: 38px !important;
+    height: 38px !important;
   }
 
   .arrow svg {
