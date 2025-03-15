@@ -15,7 +15,7 @@ Armazem Girassol é um e-commerce especializado em produtos naturais, oferecendo
 
 ## Tecnologias Utilizadas
 
-- Next.js 13
+- Next.js 15
 - React
 - CSS Modules
 - Context API
