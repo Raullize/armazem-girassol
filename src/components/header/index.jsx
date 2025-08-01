@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useState } from 'react';
-import logoImg from '@/public/assets/images/logoWithoutBg.png';
+import logoImg from '../../../public/assets/images/logoWithoutBg.png';
 import styles from './styles.module.css';
 import InputHeader from '../inputHeader';
 import CartIcon from '../cart/cartIcon';

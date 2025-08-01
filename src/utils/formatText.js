@@ -1,5 +1,4 @@
-// Atualizando os caminhos para a nova localização
-import { formatText } from '../utils/formatText';
+// Utility functions for text formatting
 
 export function capitalizeWords(text) {
   if (!text) return '';

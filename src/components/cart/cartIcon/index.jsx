@@ -2,7 +2,7 @@
 
 import { FiShoppingCart } from 'react-icons/fi';
 import styles from './styles.module.css';
-import sunflowerBg from '@/public/assets/images/sunflowerBg.png';
+import sunflowerBg from '/assets/images/sunflowerBg.png';
 
 export default function CartIcon({ cartCount, onClick }) {
   return (
