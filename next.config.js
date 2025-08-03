@@ -11,6 +11,13 @@ const nextConfig = {
     ],
     unoptimized: true,
   },
+  webpack: (config) => {
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      '/assets': require('path').resolve(__dirname, 'public/assets'),
+    };
+    return config;
+  },
 }
 
 module.exports = nextConfig

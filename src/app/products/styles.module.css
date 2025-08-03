@@ -1,0 +1,70 @@
+.main {
+  min-height: 100vh;
+  background-color: var(--sand-beige);
+  padding: 2rem 0;
+  animation: fadeIn 0.8s ease-out;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.title {
+  font-size: 2.5rem;
+  color: #000;
+  text-align: center;
+  margin-bottom: 3rem;
+  font-weight: 700;
+  animation: slideInDown 0.8s ease-out;
+}
+
+.content {
+  width: 100%;
+  animation: slideInUp 0.8s ease-out;
+  animation-delay: 200ms;
+  animation-fill-mode: both;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1rem;
+  }
+
+  .title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+}
