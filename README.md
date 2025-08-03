@@ -6,9 +6,21 @@
 
 O **Armazém Girassol** é um e-commerce moderno especializado em produtos naturais, oferecendo uma experiência de compra intuitiva e responsiva. Desenvolvido com Next.js e tecnologias modernas, o projeto foca na usabilidade, design limpo e facilidade de navegação para proporcionar a melhor experiência aos usuários.
 
+## 🎬 Demonstração
+
+Veja o Armazém Girassol em ação! Confira nossa demonstração completa das principais funcionalidades:
+
+<div align="center">
+  <img src="public/assets/demo/demo.gif" alt="Demonstração do Armazém Girassol" width="800">
+</div>
+
+> 📱 **Quer ver mais detalhes?** [Clique aqui para visualizar em tamanho completo](public/assets/demo/demo.gif)
+
+> ⏳ **Nota**: A demonstração pode demorar alguns segundos para carregar devido ao tamanho do arquivo. Por favor, aguarde!
+
 ## ✨ Funcionalidades Principais
 
-- 🛍️ **Catálogo de produtos naturais** com navegação intuitiva
+- �️ **Catálogo de produtos naturais** com navegação intuitiva
 - 🔍 **Sistema de filtros avançados** por categoria e faixa de preço
 - 🛒 **Carrinho de compras interativo** com Context API
 - 📱 **Checkout via WhatsApp** para facilitar as vendas
@@ -17,7 +29,7 @@ O **Armazém Girassol** é um e-commerce moderno especializado em produtos natur
 - 🔄 **Slideshow de imagens** para destacar produtos
 - 📊 **Paginação inteligente** para melhor performance
 
-## 🛠️ Tecnologias Utilizadas
+## �️ Tecnologias Utilizadas
 
 ### Frontend
 - **Next.js 15** - Framework React para produção
