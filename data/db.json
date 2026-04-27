@@ -1,0 +1,377 @@
+{
+  "categories": [
+    {
+      "id": 1,
+      "name": "Temperos",
+      "slug": "temperos",
+      "image": "/images/products/noImage.png"
+    },
+    {
+      "id": 2,
+      "name": "Grãos e Sementes",
+      "slug": "graos-sementes",
+      "image": "/images/products/noImage.png"
+    },
+    {
+      "id": 3,
+      "name": "Chás",
+      "slug": "chas",
+      "image": "/images/products/noImage.png"
+    },
+    {
+      "id": 4,
+      "name": "Frutas Secas",
+      "slug": "frutas-secas",
+      "image": "/images/products/noImage.png"
+    },
+    {
+      "id": 5,
+      "name": "Farinhas",
+      "slug": "farinhas",
+      "image": "/images/products/noImage.png"
+    },
+    {
+      "id": 6,
+      "name": "Castanhas e Nozes",
+      "slug": "castanhas-nozes",
+      "image": "/images/products/noImage.png"
+    },
+    {
+      "id": 7,
+      "name": "Snacks",
+      "slug": "snacks",
+      "image": "/images/products/noImage.png"
+    },
+    {
+      "id": 8,
+      "name": "Kits e Presentes",
+      "slug": "kits",
+      "image": "/images/products/noImage.png"
+    }
+  ],
+  "products": [
+    {
+      "id": 101,
+      "categoryId": 1,
+      "name": "Páprica Defumada",
+      "description": "Páprica defumada de alta qualidade, ideal para carnes e molhos. Traz um sabor único e marcante.",
+      "price": 4.5,
+      "rating": 5,
+      "reviewCount": 114,
+      "unit": "100g",
+      "isBestSeller": true,
+      "image": "/images/products/noImage.png",
+      "stock": 50
+    },
+    {
+      "id": 102,
+      "categoryId": 1,
+      "name": "Açafrão Puro",
+      "description": "Cúrcuma (Açafrão da Terra) puro, excelente anti-inflamatório natural.",
+      "price": 6.4,
+      "rating": 0,
+      "reviewCount": 0,
+      "unit": "pacote",
+      "isBestSeller": true,
+      "image": "/images/products/noImage.png",
+      "stock": 40,
+      "promotionalPrice": 5
+    },
+    {
+      "id": 103,
+      "categoryId": 1,
+      "name": "Orégano Peruano",
+      "description": "Orégano de folhas largas e aroma intenso, perfeito para pizzas e massas.",
+      "price": 3,
+      "rating": 3,
+      "reviewCount": 118,
+      "unit": "unidade",
+      "isBestSeller": false,
+      "image": "/images/products/noImage.png",
+      "stock": 0
+    },
+    {
+      "id": 104,
+      "categoryId": 1,
+      "name": "Lemon Pepper",
+      "description": "Tempero cítrico ideal para frangos, peixes e saladas.",
+      "price": 6.38,
+      "unit": "100g",
+      "isBestSeller": true,
+      "image": "/images/products/noImage.png",
+      "stock": 35,
+      "rating": 4,
+      "reviewCount": 131,
+      "promotionalPrice": 4.8
+    },
+    {
+      "id": 105,
+      "categoryId": 1,
+      "name": "Sal Rosa do Himalaia Fino",
+      "description": "Sal rosa puro, rico em minerais e com menor teor de sódio que o sal comum.",
+      "price": 13.7,
+      "unit": "1kg",
+      "isBestSeller": true,
+      "image": "/images/products/noImage.png",
+      "stock": 60,
+      "rating": 0,
+      "reviewCount": 0,
+      "promotionalPrice": 10
+    },
+    {
+      "id": 201,
+      "categoryId": 2,
+      "name": "Chia",
+      "description": "Semente de chia rica em ômega 3, fibras e proteínas.",
+      "price": 8.58,
+      "unit": "100g",
+      "isBestSeller": true,
+      "image": "/images/products/noImage.png",
+      "stock": 20,
+      "rating": 5,
+      "reviewCount": 47,
+      "promotionalPrice": 6
+    },
+    {
+      "id": 202,
+      "categoryId": 2,
+      "name": "Linhaça Dourada",
+      "description": "Semente de linhaça dourada, fonte de fibras e gorduras saudáveis.",
+      "price": 3.5,
+      "unit": "100g",
+      "isBestSeller": false,
+      "image": "/images/products/noImage.png",
+      "stock": 0,
+      "rating": 0,
+      "reviewCount": 0
+    },
+    {
+      "id": 203,
+      "categoryId": 2,
+      "name": "Quinoa em Grãos",
+      "description": "Superalimento rico em proteínas completas e fibras.",
+      "price": 8,
+      "unit": "100g",
+      "isBestSeller": false,
+      "image": "/images/products/noImage.png",
+      "stock": 25,
+      "rating": 0,
+      "reviewCount": 0
+    },
+    {
+      "id": 204,
+      "categoryId": 2,
+      "name": "Arroz Negro",
+      "description": "Arroz integral preto, com sabor amendoado e alto valor nutricional.",
+      "price": 25,
+      "unit": "pacote",
+      "isBestSeller": false,
+      "image": "/images/products/noImage.png",
+      "stock": 10,
+      "rating": 4,
+      "reviewCount": 86
+    },
+    {
+      "id": 301,
+      "categoryId": 3,
+      "name": "Hibisco",
+      "description": "Flor de hibisco desidratada para chás, auxilia na retenção de líquidos.",
+      "price": 8.75,
+      "unit": "100g",
+      "isBestSeller": true,
+      "image": "/images/products/noImage.png",
+      "stock": 15,
+      "rating": 5,
+      "reviewCount": 130,
+      "promotionalPrice": 7
+    },
+    {
+      "id": 302,
+      "categoryId": 3,
+      "name": "Camomila",
+      "description": "Flores de camomila selecionadas, calmante natural.",
+      "price": 9,
+      "unit": "100g",
+      "isBestSeller": true,
+      "image": "/images/products/noImage.png",
+      "stock": 0,
+      "rating": 5,
+      "reviewCount": 30
+    },
+    {
+      "id": 303,
+      "categoryId": 3,
+      "name": "Chá Verde",
+      "description": "Chá verde importado, rico em antioxidantes e termogênico.",
+      "price": 6.5,
+      "unit": "100g",
+      "isBestSeller": false,
+      "image": "/images/products/noImage.png",
+      "stock": 45,
+      "rating": 5,
+      "reviewCount": 53
+    },
+    {
+      "id": 401,
+      "categoryId": 4,
+      "name": "Damasco Turco",
+      "description": "Damascos doces e macios, importados da Turquia.",
+      "price": 14.28,
+      "unit": "100g",
+      "isBestSeller": true,
+      "image": "/images/products/noImage.png",
+      "stock": 30,
+      "rating": 3,
+      "reviewCount": 24,
+      "promotionalPrice": 12
+    },
+    {
+      "id": 402,
+      "categoryId": 4,
+      "name": "Uva Passa Preta",
+      "description": "Uvas passas pretas sem semente, ideais para receitas e snacks.",
+      "price": 3.78,
+      "unit": "100g",
+      "isBestSeller": false,
+      "image": "/images/products/noImage.png",
+      "stock": 80,
+      "rating": 0,
+      "reviewCount": 0,
+      "promotionalPrice": 3
+    },
+    {
+      "id": 501,
+      "categoryId": 5,
+      "name": "Farinha de Amêndoas",
+      "description": "Farinha low carb feita 100% de amêndoas descascadas.",
+      "price": 15,
+      "unit": "100g",
+      "isBestSeller": true,
+      "image": "/images/products/noImage.png",
+      "stock": 18,
+      "rating": 4,
+      "reviewCount": 87
+    },
+    {
+      "id": 502,
+      "categoryId": 5,
+      "name": "Farinha de Aveia",
+      "description": "Farinha de aveia integral, rica em beta-glucanas.",
+      "price": 3.1,
+      "unit": "100g",
+      "isBestSeller": false,
+      "image": "/images/products/noImage.png",
+      "stock": 0,
+      "rating": 0,
+      "reviewCount": 0,
+      "promotionalPrice": 2.5
+    },
+    {
+      "id": 601,
+      "categoryId": 6,
+      "name": "Castanha de Caju W1",
+      "description": "Castanha de caju torrada e salgada, graúda e crocante.",
+      "price": 16.74,
+      "unit": "100g",
+      "isBestSeller": true,
+      "image": "/images/products/noImage.png",
+      "stock": 22,
+      "rating": 5,
+      "reviewCount": 102,
+      "promotionalPrice": 13.5
+    },
+    {
+      "id": 602,
+      "categoryId": 6,
+      "name": "Noz Pecan",
+      "description": "Nozes pecan descascadas, sabor amanteigado e suave.",
+      "price": 16,
+      "unit": "100g",
+      "isBestSeller": true,
+      "image": "/images/products/noImage.png",
+      "stock": 12,
+      "rating": 5,
+      "reviewCount": 6
+    },
+    {
+      "id": 603,
+      "categoryId": 6,
+      "name": "Mix de Castanhas",
+      "description": "Combinação perfeita de castanha de caju, pará, amêndoas e nozes.",
+      "price": 14,
+      "unit": "100g",
+      "isBestSeller": true,
+      "image": "/images/products/noImage.png",
+      "stock": 15,
+      "rating": 3,
+      "reviewCount": 86
+    },
+    {
+      "id": 701,
+      "categoryId": 7,
+      "name": "Barra de Cereal Proteica",
+      "description": "Barra de cereal com whey protein, sabor chocolate.",
+      "price": 5.5,
+      "unit": "unidade",
+      "isBestSeller": false,
+      "image": "/images/products/noImage.png",
+      "stock": 50,
+      "rating": 4,
+      "reviewCount": 51
+    },
+    {
+      "id": 801,
+      "categoryId": 8,
+      "name": "Kit Iniciante Saudável",
+      "description": "Kit contendo 100g de chia, 100g de linhaça e 100g de aveia.",
+      "price": 12,
+      "unit": "kit",
+      "isBestSeller": false,
+      "image": "/images/products/noImage.png",
+      "stock": 5,
+      "rating": 4,
+      "reviewCount": 20
+    }
+  ],
+  "featuredCollections": [
+    {
+      "id": "best-sellers",
+      "title": "Os Mais Queridinhos",
+      "subtitle": "Produtos que nossos clientes amam e compram sempre",
+      "productIds": [
+        101,
+        102,
+        104,
+        201,
+        301,
+        601
+      ]
+    },
+    {
+      "id": "new-arrivals",
+      "title": "Novidades Fresquinhas",
+      "subtitle": "Acabaram de chegar no armazém para você experimentar",
+      "productIds": [
+        501,
+        602,
+        603,
+        302,
+        401,
+        103
+      ]
+    },
+    {
+      "id": "breakfast",
+      "title": "Café da Manhã Saudável",
+      "subtitle": "Comece o dia com energia e nutrição",
+      "productIds": [
+        201,
+        203,
+        502,
+        401,
+        402,
+        303
+      ]
+    }
+  ]
+}
