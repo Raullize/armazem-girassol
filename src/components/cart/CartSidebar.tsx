@@ -12,7 +12,7 @@ import {
   SheetTrigger,
   SheetFooter,
   SheetClose,
-} from '@/components/ui/sheet';
+} from '@/components/ui/Sheet';
 import { Button } from '../ui/Button';
 import { useCart, CartItem } from '../../contexts/CartContext';
 
