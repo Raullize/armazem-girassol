@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Trash2, Plus, Minus, MapPin, ArrowLeft, ShoppingCart } from 'lucide-react';
+import { Trash2, Plus, Minus, MapPin, ArrowLeft, ShoppingCart, ChevronRight } from 'lucide-react';
 import { FaWhatsapp } from 'react-icons/fa6';
 import Container from '@/components/ui/Container';
 import { Button } from '@/components/ui/Button';
@@ -39,13 +39,19 @@ export default function CartPageContent() {
     <div className="py-8 md:py-12 grow">
       <Container>
         <div className="mb-8">
-          <Link href="/" className="inline-flex items-center text-sm text-gray-500 hover:text-amber-950 transition-colors">
-            <ArrowLeft className="w-4 h-4 mr-1" />
-            Continuar comprando
-          </Link>
-          <h1 className="text-3xl md:text-4xl font-serif font-bold text-amber-950 mt-4">
+          <nav className="flex items-center text-sm text-gray-500 mb-2">
+            <Link href="/" className="hover:text-amber-950 transition-colors">
+              Home
+            </Link>
+            <ChevronRight className="w-4 h-4 mx-1" />
+            <span className="font-semibold text-amber-950">Carrinho</span>
+          </nav>
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-amber-950 font-serif">
             Seu Carrinho
           </h1>
+          <p className="text-gray-500 mt-2 text-base">
+            Revise seus produtos naturais e finalize o pedido com segurança.
+          </p>
         </div>
 
       {cartItems.length === 0 ? (

@@ -12,7 +12,7 @@ export default function CategoryCard({ category }: CategoryCardProps) {
   return (
     <Link href={`/products?category=${category.slug}`} className="group block w-full relative aspect-3/4 sm:aspect-square md:aspect-4/5 rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500">
       <Image
-        src="/images/products/noImage.png"
+        src={category.image || "/images/products/noImage.png"}
         alt={category.name}
         fill
         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
