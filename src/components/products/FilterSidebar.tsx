@@ -21,6 +21,7 @@ interface FilterSidebarProps {
   onSearchChange: (query: string) => void;
   onClearFilters: () => void;
   totalResults: number;
+  isLoading?: boolean;
 }
 
 const sortOptions: { value: SortOption; label: string }[] = [
@@ -41,6 +42,7 @@ export default function FilterSidebar({
   onSearchChange,
   onClearFilters,
   totalResults,
+  isLoading = false,
 }: FilterSidebarProps) {
   const hasActiveFilters =
     selectedCategory !== null ||
@@ -55,11 +57,15 @@ export default function FilterSidebar({
           <div className="flex items-center gap-2">
             <SlidersHorizontal className="w-4 h-4 text-amber-900" />
             <span className="font-bold text-amber-950 text-sm">Filtros</span>
-            <span className="text-xs text-gray-400 font-normal">
-              ({totalResults} produto{totalResults !== 1 ? "s" : ""})
-            </span>
+            {isLoading ? (
+              <span className="text-xs text-gray-300 font-normal">(...)</span>
+            ) : (
+              <span className="text-xs text-gray-400 font-normal">
+                ({totalResults} produto{totalResults !== 1 ? "s" : ""})
+              </span>
+            )}
           </div>
-          {hasActiveFilters && (
+          {!isLoading && hasActiveFilters && (
             <button
               onClick={onClearFilters}
               className="text-xs text-[#2E8B57] font-semibold hover:underline flex items-center gap-1 cursor-pointer"
@@ -105,29 +111,39 @@ export default function FilterSidebar({
               Categoria
             </label>
             <div className="flex flex-col gap-1 overflow-y-auto pr-2 scrollbar-thin">
-              <button
-                onClick={() => onCategoryChange(null)}
-                className={`w-full text-left px-3 py-2 rounded-lg text-sm font-medium transition-all cursor-pointer ${
-                  selectedCategory === null
-                    ? "bg-amber-950 text-white"
-                    : "text-gray-600 hover:bg-gray-50 hover:text-amber-950"
-                }`}
-              >
-                Todas as categorias
-              </button>
-              {categories.map((cat) => (
-                <button
-                  key={cat.id}
-                  onClick={() => onCategoryChange(cat.slug)}
-                  className={`w-full text-left px-3 py-2 rounded-lg text-sm font-medium transition-all cursor-pointer ${
-                    selectedCategory === cat.slug
-                      ? "bg-amber-950 text-white"
-                      : "text-gray-600 hover:bg-gray-50 hover:text-amber-950"
-                  }`}
-                >
-                  {cat.name}
-                </button>
-              ))}
+              {isLoading ? (
+                Array.from({ length: 6 }).map((_, i) => (
+                  <div
+                    key={i}
+                    className="h-9 bg-gray-100 rounded-lg animate-pulse"
+                    style={{ opacity: 1 - i * 0.1 }}
+                  />
+                ))
+              ) : (
+                <>
+                  <button
+                    onClick={() => onCategoryChange(null)}
+                    className={`w-full text-left px-3 py-2 rounded-lg text-sm font-medium transition-all cursor-pointer ${selectedCategory === null
+                        ? "bg-amber-950 text-white"
+                        : "text-gray-600 hover:bg-gray-50 hover:text-amber-950"
+                      }`}
+                  >
+                    Todas as categorias
+                  </button>
+                  {categories.map((cat) => (
+                    <button
+                      key={cat.id}
+                      onClick={() => onCategoryChange(cat.slug)}
+                      className={`w-full text-left px-3 py-2 rounded-lg text-sm font-medium transition-all cursor-pointer ${selectedCategory === cat.slug
+                          ? "bg-amber-950 text-white"
+                          : "text-gray-600 hover:bg-gray-50 hover:text-amber-950"
+                        }`}
+                    >
+                      {cat.name}
+                    </button>
+                  ))}
+                </>
+              )}
             </div>
           </div>
 
@@ -144,11 +160,10 @@ export default function FilterSidebar({
                 <button
                   key={opt.value}
                   onClick={() => onSortChange(opt.value)}
-                  className={`w-full text-left px-3 py-2 rounded-lg text-sm font-medium transition-all cursor-pointer flex items-center gap-2 ${
-                    sortBy === opt.value
+                  className={`w-full text-left px-3 py-2 rounded-lg text-sm font-medium transition-all cursor-pointer flex items-center gap-2 ${sortBy === opt.value
                       ? "text-[#2E8B57] bg-emerald-50 font-semibold"
                       : "text-gray-600 hover:bg-gray-50 hover:text-amber-950"
-                  }`}
+                    }`}
                 >
                   {sortBy === opt.value && (
                     <span className="w-1.5 h-1.5 rounded-full bg-[#2E8B57] shrink-0" />
