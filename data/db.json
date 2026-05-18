@@ -4,49 +4,49 @@
       "id": 1,
       "name": "Temperos",
       "slug": "temperos",
-      "image": "/images/products/noImage.png"
+      "image": "/images/categories/temperos.jpg"
     },
     {
       "id": 2,
       "name": "Grãos e Sementes",
       "slug": "graos-sementes",
-      "image": "/images/products/noImage.png"
+      "image": "/images/categories/graos-e-sementes.jpg"
     },
     {
       "id": 3,
       "name": "Chás",
       "slug": "chas",
-      "image": "/images/products/noImage.png"
+      "image": "/images/categories/chas.jpg"
     },
     {
       "id": 4,
       "name": "Frutas Secas",
       "slug": "frutas-secas",
-      "image": "/images/products/noImage.png"
+      "image": "/images/categories/frutas-secas.jpg"
     },
     {
       "id": 5,
       "name": "Farinhas",
       "slug": "farinhas",
-      "image": "/images/products/noImage.png"
+      "image": "/images/categories/farinhas.jpg"
     },
     {
       "id": 6,
       "name": "Castanhas e Nozes",
       "slug": "castanhas-nozes",
-      "image": "/images/products/noImage.png"
+      "image": "/images/categories/castanhas-e-nozes.jpg"
     },
     {
       "id": 7,
       "name": "Snacks",
       "slug": "snacks",
-      "image": "/images/products/noImage.png"
+      "image": "/images/categories/snacks.jpg"
     },
     {
       "id": 8,
       "name": "Kits e Presentes",
       "slug": "kits",
-      "image": "/images/products/noImage.png"
+      "image": "/images/categories/kits-e-presentes.jpg"
     }
   ],
   "products": [
