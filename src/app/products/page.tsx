@@ -1,5 +1,6 @@
 import ProductsPageContent from "@/components/products/ProductsPageContent";
 import type { Metadata } from "next";
+import { Suspense } from "react";
 
 export const metadata: Metadata = {
   title: "Produtos | Armazém Girassol",
@@ -8,5 +9,9 @@ export const metadata: Metadata = {
 };
 
 export default function ProductsPage() {
-  return <ProductsPageContent />;
+  return (
+    <Suspense fallback={<div className="min-h-screen flex items-center justify-center">Carregando...</div>}>
+      <ProductsPageContent />
+    </Suspense>
+  );
 }
